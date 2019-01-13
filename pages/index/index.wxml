@@ -1,0 +1,52 @@
+<view class="container">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+        <block wx:for="{{banners}}" wx:for-item="b" wx:key="*this">  
+            <swiper-item>  
+                <image src="{{b}}" class="slide-image" mode="aspectFill"/>  
+            </swiper-item>  
+        </block>  
+    </swiper>
+    <view class="tab">
+        <span wx:for="{{tabImgs}}" wx:for-item="ti" wx:key="tiid" class="tab-label tab-{{index}}" style="width:{{t_width}}px;height:{{t_height}}px;">
+            <image class="tab-img" src="{{ti.src}}" />
+            <text class="tab-title">{{ti.title}}</text>
+        </span>
+    </view>
+    <view class="classify">
+        <span wx:for="{{classify.top}}" wx:for-item="ct" wx:key="ctid" style="width:{{c_size.width}}px;height:{{c_size.height}}px;">
+            <span class="c-left" wx:if="{{ct.show_tag}}">
+                <text class="c-title">{{ct.title}}</text>
+                <text class="c-example">{{ct.example}}</text>
+                <label class="c-tag">{{ct.tag}}</label>
+            </span>
+            <span class="c-left" wx:else>
+                <text class="c-title">{{ct.title}}</text>
+                <text class="c-example">{{ct.example}}</text>
+            </span>
+            <span class="c-right">
+                <image class="c-img" src="{{ct.src}}" style="width:{{c_img}}px;height:{{c_img}}px;" />
+            </span>
+        </span>
+        <span wx:for="{{classify.bottom}}" wx:for-item="ct" wx:key="ctid" style="width:{{c_size.width}}px;height:{{c_size.height}}px;">
+            <span class="c-left" wx:if="{{ct.show_tag}}">
+                <text class="c-title">{{ct.title}}</text>
+                <text class="c-example">{{ct.example}}</text>
+                <label class="c-tag">{{ct.tag}}</label>
+            </span>
+            <span class="c-left" wx:else>
+                <text class="c-title">{{ct.title}}</text>
+                <text class="c-example">{{ct.example}}</text>
+            </span>
+            <span class="c-right">
+                <image class="c-img" src="{{ct.src}}" style="width:{{c_img}}px;height:{{c_img}}px;" />
+            </span>
+        </span>
+    </view>
+    <view class="dynamic">
+        <span class="d-left">商家动态</span>
+        <span class="d-right">
+            <span class="dr-top"></span>
+            <span class="dr-bottom"></span>
+        </span>
+    </view>
+</view>

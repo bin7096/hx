@@ -1,0 +1,80 @@
+.container{
+    padding: 0;
+}
+.swiper {
+    height: 400rpx;
+    width: 100%;
+}
+.swiper .slide-image{
+    height: 100%;
+    width: 100%;
+}
+.tab{
+    width: 100%;
+    padding-top: 10px;
+    flex-direction: row;
+}
+.tab-label{
+    display: inline-block;
+    text-align: center;
+}
+.tab-img{
+    width: 60%;
+    height: 60%;
+}
+.tab-title{
+    font-size: 0.75rem;
+    display: block;
+}
+.classify{
+    width:100%;
+    text-align: center;
+}
+.classify span{
+    background-color: #fafcfb;
+    display: inline-block;
+    width: 48%;
+}
+.c-left{
+    text-align: left;
+    vertical-align: top;
+}
+.c-right{
+    text-align: right;
+    position: relative;
+    top: 1.2rem;
+    right: 0.3rem;
+}
+.c-title, .c-example{
+    display: block;
+    font-weight: bold;
+    font-family: "微软雅黑";
+    padding-bottom: 0.15rem;
+}
+.c-title{
+    color: blue;
+    padding-top: 0.5rem;
+    font-size: 0.8rem;
+}
+.c-example{
+    color: #888;
+    font-size: 0.8rem;
+}
+.c-tag{
+    display: inline-block;
+    font-weight: bold;
+    font-family: "微软雅黑";
+    border: 1px solid orange;
+    color: orange;
+    padding: 0.2rem 0.3rem;
+    font-size: 0.6rem;
+}
+.dynamic{
+    width:90%;
+    padding: 0.5rem 5%;
+    background-color: #f2f3f5;
+}
+.d-left{
+    display: inline-block;
+    width: 10%;
+}
