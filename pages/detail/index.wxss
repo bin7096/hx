@@ -1,0 +1,57 @@
+.container{
+    padding: 0;
+    font-family: "微软雅黑";
+}
+.swiper{
+    width: 100%;
+}
+.swiper .slide-image{
+    height: 100%;
+    width: 100%;
+}
+.goods-info-title,.goods-info-active{
+    width: 100%;
+}
+.g-title,.g-p,.goods-active{
+    display: block;
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+.g-title{
+    font-weight: bold;
+}
+.g-p{
+    border-bottom: 1px solid #EEE;
+}
+.goods-active{
+    font-size: 0.8rem;
+    color: #888;
+}
+.g-price{
+    font-size: 1.2rem;
+    color: red;
+}
+.g-original-p{
+    text-decoration:line-through;
+    font-size: 0.7rem;
+    color: #888;
+}
+.add-to-car{
+    background-color: #074ea0;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 1rem; 
+    float: right;
+}
+.g-active{
+    background-color: orange;
+    color: white;
+    font-size: 0.6rem;
+    padding: 0.08rem 0.2rem;
+    border-radius: 0.35rem 0 0.35rem 0;
+    position: relative;
+    top: -0.1rem;
+    margin: 0 0.35rem;
+}

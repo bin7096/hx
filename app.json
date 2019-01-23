@@ -1,12 +1,42 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "074ea0",
-    "navigationBarTitleText": "海鲜小程序",
-    "navigationBarTextStyle":"white"
-  }
+    "pages":[
+        "pages/detail/index",
+        "pages/class/index",
+        "pages/index/index",
+        "pages/logs/logs"
+    ],
+    "window":{
+        "backgroundTextStyle":"light",
+        "navigationBarBackgroundColor": "074ea0",
+        "navigationBarTitleText": "海鲜小程序",
+        "navigationBarTextStyle":"white"
+    },
+    "tabBar": {  
+        "color": "#a9b7b7",  
+        "selectedColor": "#ff5a5a",  
+        "borderStyle": "white" ,
+        "list": [
+            {  
+                "selectedIconPath": "pages/res/img/bt_index_s.png",  
+                "iconPath": "pages/res/img/bt_index.png",  
+                "pagePath": "pages/index/index",  
+                "text": "首页"  
+            }, {  
+                "selectedIconPath": "pages/res/img/bt_class_s.png",  
+                "iconPath": "pages/res/img/bt_class.png",  
+                "pagePath": "pages/class/index",  
+                "text": "分类"  
+            },{  
+                "selectedIconPath": "pages/res/img/bt_car_s.png",  
+                "iconPath": "pages/res/img/bt_car.png",  
+                "pagePath": "pages/index/index",  
+                "text": "购物车"  
+            },{  
+                "selectedIconPath": "pages/res/img/bt_car_s.png",  
+                "iconPath": "pages/res/img/bt_car.png",  
+                "pagePath": "pages/index/index",  
+                "text": "个人中心"  
+            }
+        ]  
+    }
 }

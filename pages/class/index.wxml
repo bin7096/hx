@@ -1,0 +1,29 @@
+<import src="../template/common.wxml" />
+<view class="container">
+    <view class="search">
+        <input class="search-input" type="text" confirm-type="search" value=""></input>
+        <image class="search-icon" src='../res/img/search.png'></image>
+    </view>
+    <view class="list-index" style="height:{{height}}px">
+        <view class="classify-list">
+            <span wx:for="{{classifys}}" wx:key="c_id" wx:for-item="c" class="classify{{c.s}}" bindtap="classTap" data-cid="{{c.id}}">{{c.name}}</span>
+        </view>
+        <view class="goods-list">
+            <view class="">
+                <span class="goods" wx:for="{{goods}}" wx:key="gkey" wx:for-item="g">
+                    <image class="goods-img" src="{{g.pic}}" style="width:{{g_img_w}}px;height:{{g_img_w}}px" />
+                    <span class="goods-info">
+                        <text class="goods-title">{{g.title}}</text>
+                        <text class="goods-desc">{{g.desc}}</text>
+                        <span class="goods-active">{{g.active}}</span>
+                        <span class="goods-info-btm">
+                            <text class="goods-price">￥{{g.price}}</text>
+                            <image class="add-to-car" src="../res/img/add.png" bindtap="addToCar" data-gid="{{g.id}}" />
+                        </span>
+                    </span>
+                </span>
+                <span class="gl-bottom"></span>
+            </view>
+        </view>
+    </view>
+</view>

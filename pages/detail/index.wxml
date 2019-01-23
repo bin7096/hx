@@ -1,0 +1,28 @@
+<view class="container">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="height:{{pic_h}}px;">
+        <block wx:for="{{goods_info.pic}}" wx:for-item="p" wx:key="*this">  
+            <swiper-item>  
+                <image src="{{p}}" class="slide-image" mode="aspectFill"/>  
+            </swiper-item>  
+        </block>  
+    </swiper>
+    <view class="goods-info-title">
+        <text class="g-title">{{goods_info.title}}</text>
+        <span class="g-p">
+            <text class="g-price">￥{{goods_info.price}}</text>
+            <text class="g-original-p">￥{{goods_info.original_price}}</text>
+            <span class="add-to-car">加入购物车</span>
+        </span>
+    </view>
+    <view class="goods-info-active">
+        <span class="goods-active">
+            促销
+            <span class="g-active">{{goods_info.active}}</span>
+            <text class="g-active-info">{{goods_info.active_info}}</text>
+        </span>
+    </view>
+    <view class="">
+        <span class="g-detail-title">商品详情</span>
+        <view class="g-detail-info">{{goods_info.detail}}</view>
+    </view>
+</view>

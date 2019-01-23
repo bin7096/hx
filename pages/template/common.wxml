@@ -1,0 +1,14 @@
+<template name="goods_list">
+    <view class="goods_list" style="padding-top:0.7rem;padding-left:2rem;width:100%;">
+        <span class="gl" style="width:{{gl_width}}px;" wx:for="{{goods_list}}" wx:for-item="gl" wx:key="glid">
+            <image class="gl-img" src="{{gl.src}}" style="width:{{gl_width}}px;height:{{gl_width}}px;" />
+            <text class="gl-title">{{gl.title}}</text>
+            <span class="gl-info">
+                <text class="gl-price">￥{{gl.price}}</text>
+                <text class="gl-sale">已售{{gl.sale}}份</text>
+                <image class="gl-car" src="../res/img/car.png" />
+            </span>
+            <span class="gl-padding"></span>
+        </span>
+    </view>
+</template>

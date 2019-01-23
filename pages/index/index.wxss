@@ -1,5 +1,7 @@
+@import "/pages/template/common.wxss";
 .container{
     padding: 0;
+    font-family: "微软雅黑";
 }
 .swiper {
     height: 400rpx;
@@ -70,11 +72,55 @@
     font-size: 0.6rem;
 }
 .dynamic{
-    width:90%;
-    padding: 0.5rem 5%;
     background-color: #f2f3f5;
 }
 .d-left{
     display: inline-block;
-    width: 10%;
+    width: 2rem;
+}
+.d-right,.dr-top,.dr-bottom{
+    display: inline-block;
+}
+.d-right{
+    padding-left: 0.8rem;
+}
+.d-hot{
+    font-size: 0.5rem;
+    padding: 0 0.2rem;
+    border: 1px solid orange;
+    color: orange;
+    position: relative;
+    top: -2px;
+}
+.d-label{
+    font-size: 0.7rem;
+    padding-left: 0.35rem;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    color: #888;
+    position: relative;
+    top: -1px;
+}
+.video{
+    width: 100%;
+    text-align: center;
+}
+.v-span{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+.list-title{
+    width: 100%;
+    padding-left: 2rem;
+}
+.tl-left{
+    border: 2px solid red;
+    border-radius: 5px;
+}
+.tl-center,.tl-right{
+    padding-left: 0.5rem;
+    font-size: 0.8rem;
+}
+.tl-right{
+    color: #888;
 }

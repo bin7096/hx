@@ -1,0 +1,115 @@
+@import "/pages/template/common.wxss";
+view{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0;
+    padding: 0;
+}
+.search{
+    width: 100%;
+    background-color: #074ea0;
+    height: 2.5rem;
+}
+.search-input{
+    width: 92%;
+    padding-left: 3%;
+    color: white;
+    margin: 0.45rem auto;
+    height: 1.5rem;
+    border: 2px solid #FFFFFF;
+    border-radius: 1rem;
+}
+.search-icon{
+    width: 1.2rem;
+    height: 1.2rem;
+    position: relative;
+    top: -1.95rem;
+    right: 1.2rem;
+    float: right;
+}
+.list-index{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.classify-list{
+    display: inline-block;
+    width: 23.5%;
+    height: 100%;
+    background-color: #f8f8f8;
+    position: fixed;
+    top: 2.5rem;
+    left: 0;
+}
+.classify{
+    display: inline-block;
+    width: 100%;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    text-align: center;
+    /* font-size: 0.8rem; */
+    color: #8d8d8d;
+}
+.cl-selected{
+    color: black;
+    background-color: white;
+}
+.goods-list{
+    display: inline-block;
+    width: 75%;
+    height:100%;
+    position: fixed;
+    top: 2.5rem;
+    right: 0;
+    margin: 0 auto;
+    overflow-y: auto;
+}
+.gl-bottom{
+    display: inline-block;
+    width: 100%;
+    height: 2.2rem;
+}
+.goods{
+    display: inline-block;
+    width: 96%;
+    height: 30%;
+    margin-top: 0.5rem;
+    border-bottom: 1px solid #EEE;
+}
+.goods-img{
+    float: left;
+}
+.goods-info{
+    display: inline-block;
+    width: 68%;
+}
+.goods-title{
+    font-size: 0.9rem;
+}
+.goods-desc{
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    margin: 0.2rem 0;
+}
+.goods-active{
+    font-size: 0.6rem;
+    color: white;
+    background-color: #01c12e;
+    border-radius: 0.3rem 0 0.3rem 0;
+    padding: 0.1rem 0.3rem;
+}
+.goods-info-btm{
+    width: 100;
+    display: block;
+    padding: 0.5rem 0;
+}
+.goods-price{
+    color: red;
+}
+.add-to-car{
+    width: 1.5rem;
+    height: 1.5rem;
+    float: right;
+}

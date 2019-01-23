@@ -1,12 +1,17 @@
-const app = getApp()
-
 let common = require('../../utils/common.js');
 Page({
     data: {
+        rempx    : 16,
         t_width  : 0,
         t_height : 0,
         c_size   : {width:null,hright:null},
         c_img    : 0,
+        dypadding: 0.7,
+        dynamic  : 0,
+        dr_right : 0,
+        v_width  : 0,
+        gl_width : 0,
+        gl_img_h : 0,
         banners  : [
             '../res/img/banner1.png',
             '../res/img/banner2.png',
@@ -28,17 +33,45 @@ Page({
                 {title : '虾类', example : '基围虾', show_tag : false, tag : '销量冠军', src : '../res/img/class_shrimp.png'},
                 {title : '冰鲜', example : '三文鱼', show_tag : false, tag : '销量冠军', src : '../res/img/class_freezefish.png'}
             ]
-        }
+        },
+        dy_label : {
+            top : ['大黄鱼','雅片鱼','小嘴鱼','多宝鱼','海黑鱼','...'],
+            bottom : ['夏夷贝','红里罗','红扇宝','柽子王','大海螺','...']
+        },
+        goods_list : [
+            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', 'price' : 270, 'sale' : 300},
+            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', 'price' : 270, 'sale' : 300},
+            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', 'price' : 270, 'sale' : 300},
+            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', 'price' : 270, 'sale' : 300},
+            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', 'price' : 270, 'sale' : 300},
+            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', 'price' : 270, 'sale' : 300},
+            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', 'price' : 270, 'sale' : 300},
+            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', 'price' : 270, 'sale' : 300},
+        ],
+        tabs : [
+            {id : 1,title : '首页', s : ' bt-selected', src : '../res/img/bt_index_s.png'},
+            {id : 2,title : '分类', s : '', src : '../res/img/bt_class.png'},
+            {id : 3,title : '购物车', s : '', src : '../res/img/bt_car.png'},
+            {id : 4,title : '个人中心', s : '', src : '../res/img/bt_info.png'}
+        ]
     },
     onLoad: function () {
-        let t_size = common.getTabSize(4, true);
-        let c_size = common.getTabSize(2, false, false, 0.95, 0.7);
-        let c_img  = common.getTabSize(2, true, c_size.width, 1).width;
+        let t_size   = common.getTabSize(4, true);
+        let c_size   = common.getTabSize(2, false, false, 0.95, 0.7);
+        let c_img    = common.getTabSize(2, true, c_size.width, 1).width;
+        let dynamic  = common.getWidth(this.data.dypadding * 2, this.data.rempx);
+        let dr_right = common.getWidth(4, this.data.rempx);
+        let v_width  = common.getWidth(2, this.data.rempx);
+        let gl_width = common.getWidth(2.6, 16);
         this.setData({
             t_width  : t_size.width,
             t_height : t_size.height,
             c_size   : c_size,
-            c_img    : c_img
+            c_img    : c_img,
+            dynamic  : dynamic,
+            dr_right : dr_right - 5,
+            v_width  : v_width,
+            gl_width : gl_width / 2
         });
         console.log(this.data);
     }

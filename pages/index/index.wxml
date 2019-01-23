@@ -1,3 +1,4 @@
+<import src="../template/common.wxml" />
 <view class="container">
     <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
         <block wx:for="{{banners}}" wx:for-item="b" wx:key="*this">  
@@ -31,7 +32,7 @@
             <span class="c-left" wx:if="{{ct.show_tag}}">
                 <text class="c-title">{{ct.title}}</text>
                 <text class="c-example">{{ct.example}}</text>
-                <label class="c-tag">{{ct.tag}}</label>
+                <text class="c-tag">{{ct.tag}}</text>
             </span>
             <span class="c-left" wx:else>
                 <text class="c-title">{{ct.title}}</text>
@@ -42,11 +43,28 @@
             </span>
         </span>
     </view>
-    <view class="dynamic">
+    <view class="dynamic" style="width:{{dynamic}}px;padding:0.5rem {{dypadding}}rem;">
         <span class="d-left">商家动态</span>
-        <span class="d-right">
-            <span class="dr-top"></span>
-            <span class="dr-bottom"></span>
+        <span class="d-right" style="width:{{dr_right}}px">
+            <span class="dr-top">
+                <text class="d-hot">热评</text>
+                <text class="d-label" wx:for="{{dy_label.top}}" wx:for-item="dyt" wx:key="tid">{{dyt}}</text>
+            </span>
+            <span class="dr-bottom">
+                <text class="d-hot">热评</text>
+                <text class="d-label" wx:for="{{dy_label.bottom}}" wx:for-item="dyb" wx:key="bid">{{dyb}}</text>
+            </span>
         </span>
     </view>
+    <view style="height:3px;"></view>
+    <view class="video">
+        <video style="width:{{v_width}}px;z-index:2;" src="http://vjs.zencdn.net/v/oceans.mp4" poster="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547387028719&di=2affc164506ee632d4fb1c20aec42b59&imgtype=0&src=http%3A%2F%2Fimg.bimg.126.net%2Fphoto%2Fq-i-sQFAewKeaeoRzjeVXw%3D%3D%2F3398247393828181060.jpg"></video>
+    </view>
+    <view style="height:3px;"></view>
+    <view class="list-title">
+        <span class="tl-left"></span>
+        <text class="tl-center">掌柜推荐</text>
+        <text class="tl-right">Hign quality recommendation</text>
+    </view>
+    <template is="goods_list" data="{{gl_width,goods_list}}"></template>
 </view>
