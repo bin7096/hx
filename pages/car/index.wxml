@@ -1,0 +1,30 @@
+<view class="goods-list">
+    <view class="goods" wx:for="{{goods}}" wx:key="gid" wx:for-item="g">
+        <view class="goods-left">
+            <span class="checkbox-out checkbox-selected">
+                <span class="checkbox-in"></span>
+            </span>
+        </view>
+        <view class="goods-center">
+            <image class="goods-pic" src="{{g.src}}" />
+        </view>
+        <view class="goods-right">
+            <span class="title">{{g.title}}</span>
+            <span class="specification">{{g.specification}}</span>
+            <span class="g-bottom">
+                <text class="price">￥{{g.price}}</text>
+                <input type="text" class="num" value="{{g.number}}" />
+            </span>
+        </view>
+    </view>
+</view>
+<view class="account">
+    <span class="all-out all-selected" bind:tap="selected_all" data-type="all">
+        <span class="all-in"></span>
+    </span>全选
+    <span class="bt-right">
+        <span class="total-price">合计：<span class="total">￥0</span></span>
+        <span class="to-account">结算</span>
+    </span>
+</view>
+  

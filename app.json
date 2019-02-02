@@ -1,5 +1,6 @@
 {
     "pages":[
+        "pages/car/index",
         "pages/detail/index",
         "pages/class/index",
         "pages/index/index",
@@ -8,7 +9,7 @@
     "window":{
         "backgroundTextStyle":"light",
         "navigationBarBackgroundColor": "074ea0",
-        "navigationBarTitleText": "海鲜小程序",
+        "navigationBarTitleText": "WeChat",
         "navigationBarTextStyle":"white"
     },
     "tabBar": {  
@@ -29,7 +30,7 @@
             },{  
                 "selectedIconPath": "pages/res/img/bt_car_s.png",  
                 "iconPath": "pages/res/img/bt_car.png",  
-                "pagePath": "pages/index/index",  
+                "pagePath": "pages/car/index",  
                 "text": "购物车"  
             },{  
                 "selectedIconPath": "pages/res/img/bt_car_s.png",  

@@ -1,0 +1,155 @@
+.goods-list{
+    width: 95%;
+    margin: 0 auto;
+}
+.goods{
+    display: flex;
+    display: inline-block;
+    width: 100%;
+    height: 8rem;
+    /* margin: 0.6rem 0; */
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #EEE;
+}
+.goods-left,.goods-center,.goods-right{
+    display: inline-block;
+    height: 100%;
+}
+.goods-left{
+    width: 12%;
+    float: left;
+    /* background-color: red; */
+}
+.goods-center{
+    width: 30%;
+    float: left;
+    text-align: center;
+    /* background-color: blue; */
+}
+.goods-right{
+    width: 58%;
+    float: left;
+    /* background-color: greenyellow; */
+}
+.checkbox-out{
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #CCC;
+    border-radius: 5rem;
+    position: relative;
+    left: calc((100% - 1.2rem - 4px) / 2);
+    top: calc((6.8rem - 4px) / 2);
+}
+.checkbox-selected{
+    border: 2px solid #074ea0;
+}
+.checkbox-in{
+    display: block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 5rem;
+    background-color: #CCC;
+    position: relative;
+    left: calc((100% - 0.7rem) / 2);
+    top: calc(0.5rem / 2);
+}
+.checkbox-selected .checkbox-in{
+    background-color: #074ea0;
+}
+.goods-pic{
+    width: 5.5rem;
+    height: 5.5rem;
+    position: relative;
+    top: 0.5rem;
+}
+.title{
+    display: inline-block;
+    width: 100%;
+    font-size: 0.8rem;
+    color: #000000;
+}
+.specification{
+    background-color: #EEE;
+    color: #888888;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    height: 2.5rem;
+}
+.price{
+    float: left;
+    color: red;
+    font-weight: bold;
+    font-size: 0.8rem;
+    position: relative;
+    top: 0.3rem;
+}
+.num{
+    font-size: 0.8rem;
+    color: #CCC;
+    height: 0.3rem;
+    width: 5rem;
+    text-align: center;
+    float: right;
+    border: 1px solid #CCC;
+    position: relative;
+    top: 0.1rem;
+}
+.account{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 0.8rem;
+    /* padding: 0 0.8rem; */
+}
+.all-out{
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #CCC;
+    border-radius: 5rem;
+    position: relative;
+    top: 0.3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.all-selected{
+    border: 2px solid #074ea0;
+}
+.all-in{
+    display: block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 5rem;
+    background-color: #CCC;
+    position: relative;
+    top: calc(0.5rem / 2);
+    left: calc(0.5rem / 2);
+}
+.all-selected .all-in{
+    background-color: #074ea0;
+}
+.bt-right{
+    width: 50%;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+.to-account{
+    display: inline-block;
+    width: 4.5rem;
+    height: 2rem;
+    line-height: 2rem;
+    background-color: orange;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 2rem;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+.total{
+    color: orange;
+}
