@@ -1,6 +1,7 @@
 .goods-list{
     width: 95%;
     margin: 0 auto;
+    padding-bottom: 3rem;
 }
 .goods{
     display: flex;
@@ -45,7 +46,7 @@
     border: 2px solid #074ea0;
 }
 .checkbox-in{
-    display: block;
+    display: none;
     width: 0.7rem;
     height: 0.7rem;
     border-radius: 5rem;
@@ -55,6 +56,7 @@
     top: calc(0.5rem / 2);
 }
 .checkbox-selected .checkbox-in{
+    display: block;
     background-color: #074ea0;
 }
 .goods-pic{
@@ -103,6 +105,8 @@
     height: 2.5rem;
     line-height: 2.5rem;
     font-size: 0.8rem;
+    background-color: #FFFFFF;
+    border-top: #000000;
     /* padding: 0 0.8rem; */
 }
 .all-out{
@@ -120,7 +124,7 @@
     border: 2px solid #074ea0;
 }
 .all-in{
-    display: block;
+    display: none;
     width: 0.7rem;
     height: 0.7rem;
     border-radius: 5rem;
@@ -130,10 +134,11 @@
     left: calc(0.5rem / 2);
 }
 .all-selected .all-in{
+    display: block;
     background-color: #074ea0;
 }
 .bt-right{
-    width: 50%;
+    /* width: 50%; */
     text-align: right;
     position: absolute;
     right: 0;
