@@ -4,18 +4,51 @@ Page({
         rempx : 16,
         selecteds : [''],
         goods : [
-            {title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 3, 'selected' : false},
-            {title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 3, 'selected' : false},
-            {title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 3, 'selected' : false},
-            {title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 3, 'selected' : false},
-            {title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 3, 'selected' : false},
-            {title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 3, 'selected' : false},
+            {id : 0, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 10, 'selected' : false},
+            {id : 1, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
+            {id : 2, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
+            {id : 3, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
+            {id : 4, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
+            {id : 5, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
         ],
         total_price : 0,
         all_selected : false,
     },
     onLoad : function () {
 
+    },
+    selected_once : function (event) {
+        var id = event.currentTarget.dataset.gid;
+        var type = event.currentTarget.dataset.type;
+        var total_price = this.data.total_price;
+        console.log(total_price);
+        var goods = this.data.goods;
+        var n = 0;
+        if (type === 'no-selected') {
+            goods.forEach(g => {
+                if (g.id === id) {
+                    var price = common.accMul(g.price, g.num);
+                    total_price = common.accSub(total_price, price);
+                    g.selected = false;
+                }
+                n = g.selected === true ? n++ : n;
+            });
+        }else{
+            goods.forEach(g => {
+                if (g.id === id) {
+                    var price = common.accMul(g.price, g.num);
+                    total_price = common.accAdd(total_price, price);
+                    g.selected = true;
+                }
+                n = g.selected === true ? n++ : n;
+            });
+        }
+        var all_selected = n === goods.length ? true : false;
+        console.log(total_price);
+        this.setData({
+            goods :goods,
+            all_selected : all_selected
+        });
     },
     selected_all : function (event) {
         var type = event.currentTarget.dataset.type;
@@ -25,7 +58,8 @@ Page({
             var all_selected = true;
             goods.forEach(g => {
                 g.selected = true;
-                total_price = common.accAdd(total_price, g.price);
+                var price = common.accMul(g.number, g.price);
+                total_price = common.accAdd(total_price, price);
             });
         }else{
             var all_selected = false;
@@ -36,6 +70,30 @@ Page({
         this.setData({
             goods : goods,
             all_selected : all_selected,
+            total_price : total_price
+        });
+    },
+    changeNum : function (event) {
+        var id = event.currentTarget.dataset.gid;
+        var num = event.detail.value;
+        if (num !== '') {
+            num = parseInt(num);
+        }else{
+            num = 0;
+        }
+        var goods = this.data.goods;
+        var total_price = this.data.total_price;
+        goods.forEach(g => {
+            if (g.id === id && num != g.number) {
+                if (g.selected === true) {
+                    var price = num < g.number ? common.accMul(g.price, g.number - num) : common.accMul(g.price, num - g.number);
+                    total_price = num < g.number ? common.accSub(total_price, price) : common.accAdd(total_price, price);
+                }
+                g.number = parseInt(num);
+            }
+        });
+        this.setData({
+            goods : goods,
             total_price : total_price
         });
     }

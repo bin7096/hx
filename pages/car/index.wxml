@@ -1,10 +1,10 @@
 <view class="goods-list">
     <view class="goods" wx:for="{{goods}}" wx:key="gid" wx:for-item="g">
         <view class="goods-left">
-            <span wx:if="{{g.selected}}" class="checkbox-out checkbox-selected">
+            <span wx:if="{{g.selected}}" class="checkbox-out checkbox-selected" bind:tap="selected_once" data-type="selected" data-gid="{{g.id}}">
                 <span class="checkbox-in"></span>
             </span>
-            <span wx:else class="checkbox-out">
+            <span wx:else class="checkbox-out" bind:tap="selected_once" data-type="no-selected" data-gid="{{g.id}}">
                 <span class="checkbox-in"></span>
             </span>
         </view>
@@ -16,7 +16,7 @@
             <span class="specification">{{g.specification}}</span>
             <span class="g-bottom">
                 <text class="price">￥{{g.price}}</text>
-                <input type="text" class="num" value="{{g.number}}" />
+                <input type="text" class="num" value="{{g.number}}" bindinput="changeNum" data-gid="{{g.id}}" />
             </span>
         </view>
     </view>
@@ -33,4 +33,3 @@
         <span class="to-account">结算</span>
     </span>
 </view>
-  
