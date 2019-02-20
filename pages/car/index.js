@@ -21,33 +21,21 @@ Page({
         var id = event.currentTarget.dataset.gid;
         var type = event.currentTarget.dataset.type;
         var total_price = this.data.total_price;
-        console.log(total_price);
         var goods = this.data.goods;
         var n = 0;
-        if (type === 'no-selected') {
-            goods.forEach(g => {
-                if (g.id === id) {
-                    var price = common.accMul(g.price, g.num);
-                    total_price = common.accSub(total_price, price);
-                    g.selected = false;
-                }
-                n = g.selected === true ? n++ : n;
-            });
-        }else{
-            goods.forEach(g => {
-                if (g.id === id) {
-                    var price = common.accMul(g.price, g.num);
-                    total_price = common.accAdd(total_price, price);
-                    g.selected = true;
-                }
-                n = g.selected === true ? n++ : n;
-            });
-        }
+        goods.forEach(g => {
+            if (g.id === id) {
+                g.selected = type === 'no-selected' ? true : false;
+                var price = common.accMul(g.price, g.number);
+                total_price = type === 'no-selected' ? common.accAdd(total_price, price) : common.accSub(total_price, price);
+            }
+            n = g.selected === true ? n+1 : n;
+        });
         var all_selected = n === goods.length ? true : false;
-        console.log(total_price);
         this.setData({
-            goods :goods,
-            all_selected : all_selected
+            goods : goods,
+            all_selected : all_selected,
+            total_price : total_price
         });
     },
     selected_all : function (event) {
