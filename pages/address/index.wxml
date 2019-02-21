@@ -1,3 +1,14 @@
-<view class="address">
+<view class="address" style="height:{{winHeight}}px;">
     <view class="title">我的收货地址</view>
+    <view class="addr" wx:for="{{address}}" wx:for-item="add">
+        <span class="left">
+            <span class="info">
+                <span>{{add.name}}</span><span class="mobile">{{add.mobile}}</span>    
+            </span>
+            <span class="address-detail">{{add.address}}</span>
+        </span>
+        <span class="right">
+            <image class="edit-icon" src="../res/img/bt_car.png"/>
+        </span>
+    </view>
 </view>

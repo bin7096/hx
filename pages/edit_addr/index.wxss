@@ -1,0 +1,24 @@
+.edit-addr{
+    width: 100%;
+}
+.edit-form{
+    width: 100%;
+    background-color: #FFFFFF;
+    margin-top: 0.5rem;
+}
+.line{
+    width: 92%;
+    margin: 0 auto;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 1px solid #efefef;
+}
+.label{
+    color: #888888;
+}
+.input{
+    display: inline-block;
+    /* border: 1px solid red; */
+    position: relative;
+    top: 0.3rem;
+}

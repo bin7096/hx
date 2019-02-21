@@ -1,6 +1,5 @@
 .address{
     background-color: #EEE;
-    height: 100%;
 }
 .title{
     height: 2rem;
@@ -9,4 +8,38 @@
     font-weight: bold;
     font-size: 0.8rem;
     color: #888888;
+}
+.left,.right{
+    display: inline-block;
+    background-color: #FFFFFF;
+    height: 5rem;
+    float: left;
+    border-bottom: 1px solid #efefef;
+}
+.left{
+    width: 80%;
+}
+.right{
+    width: 20%;
+    text-align: center;
+}
+.info,.address-detail{
+    display: inline-block;
+    width: 90%;
+    margin: 0 5%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+.info{
+    color: #888888;
+}
+.mobile{
+    float: right;
+}
+.edit-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    top: 1.75rem;
 }

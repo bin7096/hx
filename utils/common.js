@@ -19,7 +19,6 @@ function getWidth(refund_rem, rempx){
 }
 function getHeight(refund_rem, rempx) {
     var size = winSize();
-    console.log(size);
     return Math.floor(size.height - (rempx * refund_rem));
 }
 

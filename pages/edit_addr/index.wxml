@@ -1,0 +1,17 @@
+<view class="edit-addr">
+    <view class="edit-form">
+        <view class="line">
+            <picker mode="multiSelector" value="{{city_index}}" range="{{city}}" bindchange="cityChange" bindcolumnchange="cityColumnChange">
+                <span class="label">所在城市：</span>{{city[0][city_index[0]]}} {{city[1][city_index[1]]}}
+            </picker>
+        </view>
+        <view class="line">
+            <picker value="{{area_index}}" range="{{area}}">
+                <span class="label">所在区域：</span>{{area[area_index]}}
+            </picker>
+        </view>
+        <view class="line">
+            <span class="label">楼号-门牌号：</span><input class="input" placeholder="例如：A座906室" />
+        </view>
+    </view>
+</view>
