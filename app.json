@@ -1,5 +1,6 @@
 {
     "pages":[
+        "pages/my_info/index",
         "pages/edit_addr/index",
         "pages/address/index",
         "pages/car/index",

@@ -1,0 +1,20 @@
+<view class="my">
+    <view class="title">
+        <view class="my-info">
+            <image class="left" src="{{head_img}}" />
+            <span class="right">
+                <span class="line">{{user_name}}</span>
+                <span class="line">
+                    {{mobile}}
+                    <image class="edit-icon" src="../res/img/edit.png" />
+                </span>
+            </span>
+        </view>
+    </view>
+    <view class="navigate">
+        <span class="navigate-label">
+            <image class="ng-icon" src="../res/img/add.png" />
+            <span class="ng-name">我的订单</span>
+        </span>
+    </view>
+</view>

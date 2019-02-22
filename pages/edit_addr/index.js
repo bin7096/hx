@@ -62,12 +62,40 @@ Page({
             ]}
         ],
         area : ['天河区','白云区','花都区','黄浦区','番禺区','从化市'],
+        radio_index : 0,
+        radio_vals : [
+            {id : 0, name : '家'},
+            {id : 1, name : '公司'},
+            {id : 2, name : '其他'},
+        ],
+        input_vals : {
+            house_number : '',
+            user_name : '',
+            mobile : ''
+        }
     },
     onLoad : function () {
-
+        var city = this.data.city_detail;
+        var radio_vals = this.data.radio_vals
+        this.setData({
+            city_index : [city[0].id, city[0].cities[0].id],
+            area_index : city[0].cities[0].area[0].id,
+            radio_index : radio_vals[0].id
+        })
     },
     cityChange : function (event) {
-        console.log(event.detail);
+        var info = event.detail.value;
+        var city = this.data.city_detail;
+        var area = city[info[0]].cities[info[1]].area;
+        var a = [];
+        area.forEach(as => {
+            a.push(as.name);
+        });
+        this.setData({
+            city_index : info,
+            area : a,
+            area_index : 0
+        })
     },
     cityColumnChange : function (event) {
         var column = event.detail.column;
@@ -76,17 +104,47 @@ Page({
             var city  = this.data.city;
             var detail= this.data.city_detail[value].cities;
             var c = [];
-            for (let i = 0; i < detail.length; i++) {
-                c.push(detail[i].name);
-            }
+            var area = [];
+            detail.forEach(d => {
+                c.push(d.name);
+            });
+            detail[0].area.forEach(a => {
+                area.push(a.name);
+            });
             city[1] = c;
             var city_index = [value,0];
             this.setData({
                 city_index : city_index,
-                city : city
+                city : city,
+                area : area,
+                area_index : 0
             });
         }else{
             return;
         }
+    },
+    areaChange : function (event) {
+        this.setData({
+            area_index : event.detail.value
+        });
+    },
+    radioChange : function (event) {
+        this.setData({
+            radio_index : event.detail.value
+        });
+    },
+    logInfo : function (event) {
+        var name = event.currentTarget.dataset.name;
+        var value = event.detail.value;
+        var input_vals = this.data.input_vals;
+        input_vals[name] = value;
+        this.setData({
+            input_vals : input_vals
+        });
+    },
+    submit : function (event) {
+        console.log(this.data.city_index);
+        console.log(this.data.area_index);
+        console.log(this.data.input_vals);
     }
 })

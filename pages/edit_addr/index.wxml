@@ -6,12 +6,31 @@
             </picker>
         </view>
         <view class="line">
-            <picker value="{{area_index}}" range="{{area}}">
+            <picker value="{{area_index}}" range="{{area}}" bindchange="areaChange">
                 <span class="label">所在区域：</span>{{area[area_index]}}
             </picker>
         </view>
         <view class="line">
-            <span class="label">楼号-门牌号：</span><input class="input" placeholder="例如：A座906室" />
+            <span class="label">楼号-门牌号：</span><input class="input" placeholder="例如：A座906室" bindblur="logInfo" data-name="house_number" />
         </view>
+        <view class="line">
+            <span class="label">收货人：</span><input class="input" placeholder="请填写收货人姓名" bindblur="logInfo" data-name="user_name" />
+        </view>
+        <view class="line">
+            <span class="label">联系电话：</span><input class="input" placeholder="请填写联系电话" bindblur="logInfo" data-name="mobile" />
+        </view>
+        <view class="line">
+            <radio-group bindchange="radioChange">
+                <span  wx:for="{{radio_vals}}" wx:for-item="rv" wx:for-index="r" wx:key="k">
+                    <radio class="radio" wx:if="{{r === 0}}" value="{{rv.id}}" checked="true" color="#074ea0">
+                        {{rv.name}}
+                    </radio>
+                    <radio class="radio" wx:else value="{{rv.id}}" color="#074ea0">
+                        {{rv.name}}
+                    </radio>
+                </span>
+            </radio-group>
+        </view>
+        <button class="submit" bindtap="submit">保存</button>
     </view>
 </view>

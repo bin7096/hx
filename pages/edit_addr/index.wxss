@@ -22,3 +22,12 @@
     position: relative;
     top: 0.3rem;
 }
+.radio{
+    margin-right: 1rem;
+}
+.submit{
+    width: 90%;
+    margin: 0.5rem auto;
+    background-color: #074ea0;
+    color: #FFFFFF;
+}
