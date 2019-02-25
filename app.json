@@ -1,12 +1,12 @@
 {
     "pages":[
-        "pages/my_info/index",
-        "pages/edit_addr/index",
-        "pages/address/index",
-        "pages/car/index",
-        "pages/detail/index",
-        "pages/class/index",
         "pages/index/index",
+        "pages/class/index",
+        "pages/car/index",
+        "pages/my_info/index",
+        "pages/detail/index",
+        "pages/address/index",
+        "pages/edit_addr/index",
         "pages/logs/logs"
     ],
     "window":{
@@ -39,7 +39,7 @@
             },{  
                 "selectedIconPath": "pages/res/img/bt_car_s.png",  
                 "iconPath": "pages/res/img/bt_car.png",  
-                "pagePath": "pages/index/index",  
+                "pagePath": "pages/my_info/index",  
                 "text": "个人中心"  
             }
         ]  

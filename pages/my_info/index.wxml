@@ -12,9 +12,9 @@
         </view>
     </view>
     <view class="navigate">
-        <span class="navigate-label">
-            <image class="ng-icon" src="../res/img/add.png" />
-            <span class="ng-name">我的订单</span>
+        <span wx:for="{{tab_list}}" wx:for-item="t" wx:key="tid" class="navigate-label" bind:tap="jumpTo" data-uri="{{t.uri}}" style="display:inline-block;width:{{tab}}px;height:{{tab}}px;">
+            <image class="ng-icon" src="{{t.img}}" />
+            <span class="ng-name">{{t.name}}</span>
         </span>
     </view>
 </view>
