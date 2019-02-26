@@ -1,4 +1,7 @@
 @import "/pages/template/common.wxss";
+page{
+    background-color: #FFFFFF;
+}
 .container{
     padding: 0;
     font-family: "微软雅黑";

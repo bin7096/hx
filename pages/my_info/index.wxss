@@ -32,6 +32,9 @@
 .navigate{
     margin-top: 0.5rem;
 }
+.navigate-label{
+    background-color: #FFFFFF;
+}
 .ng-icon{
     display: block;
     width: 50%;

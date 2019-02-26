@@ -1,5 +1,6 @@
 {
     "pages":[
+        "pages/my_order/index",
         "pages/my_info/index",
         "pages/index/index",
         "pages/class/index",
@@ -10,7 +11,7 @@
         "pages/logs/logs"
     ],
     "window":{
-        "backgroundColor": "#EEE",
+        "backgroundColor": "#CCC",
         "backgroundTextStyle":"light",
         "navigationBarBackgroundColor": "#074ea0",
         "navigationBarTitleText": "WeChat",

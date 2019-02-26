@@ -11,7 +11,7 @@ Page({
             {name : '我的地址', img : '../res/img/add.png', uri : '../my_addr/index'},
             {name : '积分兑换', img : '../res/img/add.png', uri : '../exchange/index'},
             {name : '签到有惊喜', img : '../res/img/add.png', uri : '../sign/index'},
-            {name : '退款/售后', img : '../res/img/add.png', uri : '../afterSale'},
+            {name : '退款/售后', img : '../res/img/add.png', uri : '../afterSale/index'},
             {name : '客服反馈', img : '../res/img/add.png', uri : '../service/index'},
             {name : '帮助中心', img : '../res/img/add.png', uri : '../help/index'},
         ]

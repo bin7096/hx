@@ -76,7 +76,7 @@
     color: #888888;
     font-size: 0.7rem;
     display: inline-block;
-    width: 100%;
+    width: 99%;
     height: 2.5rem;
 }
 .price{

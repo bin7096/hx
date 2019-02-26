@@ -1,0 +1,24 @@
+<view>
+    <view class="order">
+        <view class="line top" hover-class="none" hover-stop-propagation="false">
+            <span class="order-number">648646464654564654454</span>
+            <span class="status">已完成</span>
+        </view>
+        <view class="order-goods">
+            <view class="line time">
+                <span class="name">智利原味三文鱼排 ></span>
+                01-06 15:28
+            </view>
+            <view class="line bottom">
+                <span class="imgDiv"><image class="img" src="../res/img/class_freezefish.png" /></span>
+                <span class="order-info">
+                    <span class="price">￥20.1</span>
+                    <span class="number">共1件</span>
+                </span>
+            </view>
+        </view>
+        <view class="line btn">
+            <span class="button">再次购买</span>
+        </view>
+    </view>
+</view>
