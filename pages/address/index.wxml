@@ -1,6 +1,6 @@
 <view class="address" style="height:{{winHeight}}px;">
     <view class="title">我的收货地址</view>
-    <view class="addr" wx:for="{{address}}" wx:for-item="add">
+    <view class="addr" wx:for="{{address}}" wx:for-item="add" wx:key="aid">
         <span class="left">
             <span class="info">
                 <span>{{add.name}}</span><span class="mobile">{{add.mobile}}</span>    

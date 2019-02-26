@@ -1,19 +1,24 @@
 <view>
-    <view class="order">
-        <view class="line top" hover-class="none" hover-stop-propagation="false">
-            <span class="order-number">648646464654564654454</span>
-            <span class="status">已完成</span>
+    <view class="order" wx:for="{{orders}}" wx:for-item="o" wx:key="oid">
+        <view class="line top">
+            <span class="order-number">订单号：{{o.order_no}}</span>
+            <span class="status">
+                <span class="time">下单时间：01-06 15:28</span>
+                <span class="status" wx:if="{{o.status === '1'}}" style="color:red;">待支付</span>
+                <span class="status" wx:elif="{{o.status === '2'}}" style="color:green;">已支付</span>
+                <span class="status" wx:elif="{{o.status === '3'}}" style="color:blue;">配送中</span>
+                <span class="status" wx:else>已完成</span>
+            </span>
         </view>
-        <view class="order-goods">
-            <view class="line time">
-                <span class="name">智利原味三文鱼排 ></span>
-                01-06 15:28
+        <view class="order-goods" wx:for="{{o.goods}}" wx:for-item="g" wx:key="gid">
+            <view class="line title">
+                <span class="name">{{g.name}} ></span>
             </view>
             <view class="line bottom">
-                <span class="imgDiv"><image class="img" src="../res/img/class_freezefish.png" /></span>
+                <span class="imgDiv"><image class="img" src="{{g.img}}" /></span>
                 <span class="order-info">
-                    <span class="price">￥20.1</span>
-                    <span class="number">共1件</span>
+                    <span class="price">￥{{g.price}}</span>
+                    <span class="number">共{{g.number}}件</span>
                 </span>
             </view>
         </view>

@@ -1,6 +1,7 @@
 .order{
     width: 100%;
     background-color: #FFFFFF;
+    margin-bottom: 0.5rem;
 }
 .line{
     padding: 0 0.7rem;
@@ -8,20 +9,28 @@
 .top{
     height: 2rem;
     line-height: 2rem;
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 0.5rem;
+}
+.order-number,.status{
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #888;
+}
+.status{
+    float: right;
+}
+.title{
+    height: 1.2rem;
+    font-size: 0.7rem;
 }
 .name{
     font-size: 0.8rem;
-    font-weight: bold;
-}
-.status{
-    font-size: 0.6rem;
-    color: #888;
-    float: right;
 }
 .time{
-    height: 1.2rem;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #888;
+    margin-right: 0.5rem;
 }
 .bottom{
     height: 4rem;
@@ -64,4 +73,8 @@
     text-align: center;
     border-radius: 1rem;
     font-size: 0.9rem;
+}
+.order-goods{
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #efefef;
 }

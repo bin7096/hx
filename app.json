@@ -1,13 +1,13 @@
 {
     "pages":[
-        "pages/my_order/index",
-        "pages/my_info/index",
         "pages/index/index",
         "pages/class/index",
         "pages/car/index",
+        "pages/my_info/index",
         "pages/detail/index",
         "pages/address/index",
         "pages/edit_addr/index",
+        "pages/my_order/index",
         "pages/logs/logs"
     ],
     "window":{
