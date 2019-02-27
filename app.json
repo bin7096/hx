@@ -1,5 +1,6 @@
 {
     "pages":[
+        "pages/my_eval/index",
         "pages/index/index",
         "pages/class/index",
         "pages/car/index",
