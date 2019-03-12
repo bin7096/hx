@@ -1,0 +1,19 @@
+.body{
+    height: 15rem;
+    background-color: #FFFFFF;
+    padding: 0.5rem 0;
+}
+.textarea{
+    border: 2px solid #CCC;
+    width: 95%;
+    height: 11rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+}
+.submit{
+    width: 95%;
+    background-color: #074ea0;
+    color: #FFFFFF;
+    border-radius: 0.5rem;
+    margin-top: 1.2rem;
+}

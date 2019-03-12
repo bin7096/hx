@@ -1,0 +1,4 @@
+<view class="body">
+    <textarea class="textarea" bindchange="inputText"></textarea>
+    <button class="submit" bindtap="submit" data-oid="{{oid}}">提交</button>
+</view> 

@@ -21,8 +21,8 @@
             </view>
         </view>
         <view class="line btn">
-            <span class="button" wx:if="{{o.status === '4'}}">去评价</span>
-            <span class="button" wx:if="{{o.status === '5'}}">查看评价</span>
+            <span class="button" wx:if="{{o.status === '4'}}" bindtap="toEval" data-oid="{{o.id}}">去评价</span>
+            <span class="button" wx:if="{{o.status === '5'}}" bindtap="showEval" data-oid="{{o.id}}">查看评价</span>
         </view>
     </view>
 </view>
