@@ -7,11 +7,11 @@ Page({
         
     },
     inputText : function (event) {
-        var eval = event.detail.value;
-        console.log(eval);
+        let val = event.detail.value;
         this.setData({
-            eval : eval
+            eval : val
         });
+        console.log(this.data.eval);
     },
     submit : function (event) {
         console.log(this.data.oid);

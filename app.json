@@ -1,6 +1,6 @@
 {
     "pages":[
-        "pages/to_eval/index",
+        "pages/exchange/index",
         "pages/index/index",
         "pages/class/index",
         "pages/car/index",
@@ -10,7 +10,8 @@
         "pages/edit_addr/index",
         "pages/my_order/index",
         "pages/logs/logs",
-        "pages/my_eval/index"
+        "pages/my_eval/index",
+        "pages/to_eval/index"
     ],
     "window":{
         "backgroundColor": "#CCC",
