@@ -1,11 +1,11 @@
 {
     "pages":[
-        "pages/exchange/index",
+        "pages/detail/index",
         "pages/index/index",
+        "pages/exchange/index",
         "pages/class/index",
         "pages/car/index",
         "pages/my_info/index",
-        "pages/detail/index",
         "pages/address/index",
         "pages/edit_addr/index",
         "pages/my_order/index",
