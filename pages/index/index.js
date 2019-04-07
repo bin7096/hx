@@ -39,14 +39,14 @@ Page({
             bottom : ['夏夷贝','红里罗','红扇宝','柽子王','大海螺','...']
         },
         goods_list : [
-            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', 'price' : 270, 'sale' : 300},
-            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', 'price' : 270, 'sale' : 300},
-            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', 'price' : 270, 'sale' : 300},
-            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', 'price' : 270, 'sale' : 300},
-            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', 'price' : 270, 'sale' : 300},
-            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', 'price' : 270, 'sale' : 300},
-            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', 'price' : 270, 'sale' : 300},
-            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', 'price' : 270, 'sale' : 300},
+            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
+            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
+            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
+            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
+            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
+            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
+            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
+            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
         ],
         tabs : [
             {id : 1,title : '首页', s : ' bt-selected', src : '../res/img/bt_index_s.png'},
@@ -63,7 +63,36 @@ Page({
         let dr_right = common.getWidth(4, this.data.rempx);
         let v_width  = common.getWidth(2, this.data.rempx);
         let gl_width = common.getWidth(2.6, 16);
-        this.setData({
+        let obj = this;
+        wx.request({
+            url: 'http://119.3.1.237:8081/mobile/classify/topList', // 仅为示例，并非真实的接口地址
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+                if (res.data.code === 0) {
+                    let classify = res.data.data;
+                    obj.setData({
+                        classify : classify
+                    });
+                }
+            }
+        });
+        wx.request({
+            url: 'http://119.3.1.237:8081/mobile/goods/topList', // 仅为示例，并非真实的接口地址
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+                if (res.data.code === 0) {
+                    let goods_list = res.data.data;
+                    obj.setData({
+                        goods_list : goods_list
+                    });
+                }
+            }
+        });
+        obj.setData({
             t_width  : t_size.width,
             t_height : t_size.height,
             c_size   : c_size,

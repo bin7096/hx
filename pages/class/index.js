@@ -5,12 +5,6 @@ Page({
         height : 0,
         g_img_w : 0,
         g_right : 0,
-        tabs : [
-            {id : 1 , title : '首页', s : '', src : '../res/img/bt_index.png'},
-            {id : 2 , title : '分类', s : ' bt-selected', src : '../res/img/bt_class_s.png'},
-            {id : 3 , title : '购物车', s : '', src : '../res/img/bt_car.png'},
-            {id : 4 , title : '个人中心', s : '', src : '../res/img/bt_info.png'}
-        ],
         classifys : [
             {id : 0 , name : '店内活动' , s : ''},
             {id : 1 , name : '为你优选' , s : ' cl-selected'},
@@ -37,6 +31,21 @@ Page({
         let height = common.getHeight(2.5, this.data.rempx);
         let size   = common.winSize();
         console.log((size.width - size.width * 0.72) / 2);
+        let obj = this;
+        wx.request({
+            url: 'http://119.3.1.237:8081/mobile/classify/classifys', // 仅为示例，并非真实的接口地址
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+                if (res.data.code === 0) {
+                    let classifys = res.data.data;
+                    obj.setData({
+                        classifys : classifys
+                    });
+                }
+            }
+        });
         this.setData({
             height  : height,
             g_img_w : size.width * 0.72 * 0.95 * 0.32,
