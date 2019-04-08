@@ -1,0 +1,21 @@
+.line{
+    background-color: #FFFFFF;
+
+}
+.title,.query{
+    padding: 0 1rem;
+    border-bottom: 1px dashed #CCC;
+}
+.title{
+    padding: 1rem 1rem;
+}
+.right{
+    width: 1rem;
+    height: 1rem;
+    float: right;
+    position: relative;
+    top: 0.1rem;
+}
+.q-title,.q-value{
+    padding: 0.5rem 0;
+}

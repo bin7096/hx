@@ -1,0 +1,12 @@
+<view style="margin-top:0.5rem;">
+    <view class="line">
+        <view class="title">
+            <span class="left">咨询问题1</span>
+            <image class="right" src="../res/img/top.png" />
+        </view>
+        <view class="query">
+            <view class="q-title">问题问题问题</view>
+            <view class="q-value">问题回复问题回复问题回复问题回复</view>
+        </view>
+    </view>
+</view>

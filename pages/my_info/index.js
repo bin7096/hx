@@ -27,7 +27,6 @@ Page({
         if (uri === false) {
             return;
         }
-        console.log(uri);
         wx.navigateTo({
             url : uri,
             success : function (res) {

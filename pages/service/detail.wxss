@@ -1,0 +1,13 @@
+.title,.value{
+    margin: 0.2rem 1rem;
+    width: calc(100% - 2rem);
+    display: inline-block;
+    word-wrap: break-word;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+}
+.value{
+    text-indent: 0.5rem;
+    color: #AAA;
+    font-size: 0.75rem;
+}

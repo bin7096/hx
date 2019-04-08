@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    domain: 'http://119.3.1.237:8081'
   }
 })

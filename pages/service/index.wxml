@@ -1,0 +1,6 @@
+<view>
+    <view class="title">常见问题</view>
+    <view class="div">
+        <view class="line" wx:for="{{issueList}}" wx:for-item="issue" wx:key="id" bindtap="showDetail" data-id="{{issue.id}}">123456789</view>
+    </view>
+</view>

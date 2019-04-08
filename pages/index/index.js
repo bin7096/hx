@@ -64,8 +64,9 @@ Page({
         let v_width  = common.getWidth(2, this.data.rempx);
         let gl_width = common.getWidth(2.6, 16);
         let obj = this;
+        let app = getApp();
         wx.request({
-            url: 'http://119.3.1.237:8081/mobile/classify/topList', // 仅为示例，并非真实的接口地址
+            url: `${app.globalData.domain}/mobile/classify/topList`, // 仅为示例，并非真实的接口地址
             header: {
               'content-type': 'application/json' // 默认值
             },
@@ -79,7 +80,7 @@ Page({
             }
         });
         wx.request({
-            url: 'http://119.3.1.237:8081/mobile/goods/topList', // 仅为示例，并非真实的接口地址
+            url: `${app.globalData.domain}/mobile/goods/topList`, // 仅为示例，并非真实的接口地址
             header: {
               'content-type': 'application/json' // 默认值
             },
