@@ -73,6 +73,7 @@ Page({
             success(res) {
                 if (res.data.code === 0) {
                     let classify = res.data.data;
+                    console.log(classify);
                     obj.setData({
                         classify : classify
                     });
@@ -104,5 +105,32 @@ Page({
             gl_width : gl_width / 2
         });
         console.log(this.data);
+    },
+    toGoods : function (event) {
+        var id = event.currentTarget.dataset.id;
+        wx.navigateTo({
+            url : `../detail/index?id=${id}`,
+            success : function (res) {
+                console.log('success');
+            },
+            fail : function (err) {
+                console.log('failed');
+            }
+        });
+    },
+    toClassify : function (event) {
+        var id = event.currentTarget.dataset.cid;
+        console.log(id);
+        let app = getApp();
+        app.id = id;
+        wx.switchTab({
+            url : `../class/index`,
+            success : function (res) {
+                console.log('success');
+            },
+            fail : function (err) {
+                console.log('failed');
+            }
+        });
     }
 })

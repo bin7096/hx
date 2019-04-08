@@ -14,7 +14,7 @@
         </span>
     </view>
     <view class="classify">
-        <span wx:for="{{classify.top}}" wx:for-item="ct" wx:key="ctid" style="width:{{c_size.width}}px;height:{{c_size.height}}px;">
+        <span wx:for="{{classify.top}}" wx:for-item="ct" wx:key="ctid" style="width:{{c_size.width}}px;height:{{c_size.height}}px;" bindtap="toClassify" data-cid="{{ct.id}}">
             <span class="c-left" wx:if="{{ct.show_tag}}">
                 <text class="c-title">{{ct.title}}</text>
                 <text class="c-example">{{ct.example}}</text>
@@ -28,7 +28,7 @@
                 <image class="c-img" src="{{ct.src}}" style="width:{{c_img}}px;height:{{c_img}}px;" />
             </span>
         </span>
-        <span wx:for="{{classify.bottom}}" wx:for-item="ct" wx:key="ctid" style="width:{{c_size.width}}px;height:{{c_size.height}}px;">
+        <span wx:for="{{classify.bottom}}" wx:for-item="ct" wx:key="ctid" style="width:{{c_size.width}}px;height:{{c_size.height}}px;" bindtap="toClassify" data-cid="{{ct.id}}">
             <span class="c-left" wx:if="{{ct.show_tag}}">
                 <text class="c-title">{{ct.title}}</text>
                 <text class="c-example">{{ct.example}}</text>

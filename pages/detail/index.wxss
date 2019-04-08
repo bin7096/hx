@@ -1,3 +1,4 @@
+@import "../res/wxParse/wxParse.wxss";
 .container{
     padding: 0;
     font-family: "微软雅黑";

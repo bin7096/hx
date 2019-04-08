@@ -15,7 +15,8 @@
                     <span class="goods-info">
                         <text class="goods-title">{{g.title}}</text>
                         <text class="goods-desc">{{g.desc}}</text>
-                        <span class="goods-active">{{g.active}}</span>
+                        <span class="goods-active" wx:if="{{g.active !== ''}}">{{g.active}}</span>
+                        <span class="goods-active" wx:else style="background-color:#FFF;">{{g.active}}</span>
                         <span class="goods-info-btm">
                             <text class="goods-price">￥{{g.price}}</text>
                             <image class="add-to-car" src="../res/img/add.png" bindtap="addToCar" data-gid="{{g.id}}" />

@@ -1,4 +1,5 @@
 let common = require('../../utils/common.js');
+let wxParse = require('../res/wxParse/wxParse.js');
 Page({
     data : {
         pic_h : 0,
@@ -23,9 +24,33 @@ Page({
             detail : ''
         }
     },
-    onLoad : function () {
+    onLoad : function (option) {
         let p_size   = common.getTabSize(1, true);
+        let obj = this;
+        let app = getApp();
+        let id = option.id;
         console.log(p_size);
+        wx.request({
+            url: `${app.globalData.domain}/mobile/goods/detail`, // 仅为示例，并非真实的接口地址
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            data:{id:id},
+            method: "POST",
+            success(res) {
+                if (res.data.code === 0) {
+                    let goods_info = res.data.data.info;
+                    obj.setData({
+                        goods_info : goods_info
+                    });
+                    wxParse.wxParse('detail', 'html', goods_info.detail, obj, 0);
+                    console.log(obj.data);
+                }else{
+                    wx.showToast({title:res.data.msg});
+                }
+            },
+
+        });
         this.setData({
             pic_h : p_size.height
         });
