@@ -1,10 +1,10 @@
 {
     "pages":[
+        "pages/my_info/index",
         "pages/index/index",
         "pages/detail/index",
         "pages/help/index",
         "pages/service/index",
-        "pages/my_info/index",
         "pages/service/detail",
         "pages/exchange/index",
         "pages/class/index",

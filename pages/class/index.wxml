@@ -6,7 +6,7 @@
     </view>
     <view class="list-index" style="height:{{height}}px">
         <view class="classify-list">
-            <span wx:for="{{classifys}}" wx:key="c_id" wx:for-item="c" class="classify{{c.s}}" bindtap="classTap" data-cid="{{c.id}}">{{c.name}}</span>
+            <span wx:for="{{classifys}}" wx:key="c_id" wx:for-item="c" wx:for-index="index" class="classify{{c.s}}" bindtap="classTap" data-k="{{index}}">{{c.name}}</span>
         </view>
         <view class="goods-list">
             <view class="">

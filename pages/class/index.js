@@ -31,12 +31,18 @@ Page({
         let height = common.getHeight(2.5, this.data.rempx);
         let size   = common.winSize();
         console.log((size.width - size.width * 0.72) / 2);
+        this.setData({
+            height  : height,
+            g_img_w : size.width * 0.72 * 0.95 * 0.32,
+        });
+    },
+    onShow : function () {
         let obj = this;
         let app = getApp();
-        let id = app.id;
+        let id = app.class_id;
         console.log(id);
         wx.request({
-            url: 'http://119.3.1.237:8081/mobile/classify/classifys', // 仅为示例，并非真实的接口地址
+            url: `${app.globalData.domain}/mobile/classify/classifys`, // 仅为示例，并非真实的接口地址
             header: {
               'content-type': 'application/json' // 默认值
             },
@@ -53,7 +59,7 @@ Page({
             }
         });
         wx.request({
-            url: 'http://119.3.1.237:8081/mobile/goods/goodsList', // 仅为示例，并非真实的接口地址
+            url: `${app.globalData.domain}/mobile/goods/goodsList`, // 仅为示例，并非真实的接口地址
             header: {
               'content-type': 'application/json' // 默认值
             },
@@ -69,18 +75,34 @@ Page({
                 }
             }
         });
-        this.setData({
-            height  : height,
-            g_img_w : size.width * 0.72 * 0.95 * 0.32,
-        });
     },
     classTap : function (event) {
-        var id = event.currentTarget.dataset.cid;
-        var classify = this.data.classifys;
+        let k = event.currentTarget.dataset.k;
+        console.log(k);
+        let classify = this.data.classifys;
+        let id = classify[k].id;
+        let obj = this;
         classify.forEach(item => {
             item.s = '';
         });
-        classify[id].s = ' cl-selected';
+        classify[k].s = ' cl-selected';
+        wx.request({
+            url: `${app.globalData.domain}/mobile/goods/goodsList`, // 仅为示例，并非真实的接口地址
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            data: {id : id},
+            method: "POST",
+            success(res) {
+                if (res.data.code === 0) {
+                    let goods = res.data.data;
+                    console.log(goods);
+                    obj.setData({
+                        goods : goods
+                    });
+                }
+            }
+        });
         this.setData({
             classifys : classify
         });

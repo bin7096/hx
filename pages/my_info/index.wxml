@@ -1,13 +1,16 @@
 <view class="my">
     <view class="title">
         <view class="my-info">
-            <image class="left" src="{{head_img}}" />
+            <image class="left" wx:if="{{userinfo.avatarUrl === null}}" src="../res/img/null.jpg" />
+            <image class="left" wx:else src="{{head_img}}" />
             <span class="right">
-                <span class="line">{{user_name}}</span>
-                <span class="line">
-                    {{mobile}}
+                <span class="line" wx:if="{{userinfo.nickname !== null}}">{{userinfo.nickname}}</span>
+                <button wx:else open-type="getUserInfo" style="height:1.2rem;line-height:1.2rem;background-color:#074ea0;color:#FFF;border:1none;">获取用户信息</button>
+                <span class="line" wx:if="{{userinfo.mobile !== null}}">
+                    {{userinfo.mobile}}
                     <image class="edit-icon" src="../res/img/edit.png" />
                 </span>
+                <button wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="height:1.2rem;line-height:1.2rem;background-color:#074ea0;color:#FFF;border:1none;margin-top:1rem;">获取手机号码</button>
             </span>
         </view>
     </view>

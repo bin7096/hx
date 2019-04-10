@@ -1,9 +1,50 @@
 let common = require('../../utils/common.js')
 Page({
+    getPhoneNumber(e) {
+        let obj = this;
+        wx.login({
+            success: function(res) {
+                if (res.code) {
+                    let app = getApp();
+                    wx.request({
+                        url: `${app.globalData.domain}/mobile/user/getMobile`, // 仅为示例，并非真实的接口地址
+                        header: {
+                            'content-type': 'application/json' // 默认值
+                        },
+                        data: {
+                            user_id : app.globalData.user_id,
+                            code : res.code,
+                            encryptedData : e.detail.encryptedData,
+                            iv : e.detail.iv
+                        },
+                        method: "POST",
+                        success(res) {
+                            if (res.data.code === 0) {
+                                let userinfo = obj.data.userinfo;
+                                console.log(userinfo);
+                            }
+                        }
+                    });
+                } else {
+                    wx.showToast({title: '获取手机失败'});
+                }
+            },
+            fail: function (res) {
+                wx.showToast({title: '获取手机失败'});
+            }
+        });
+        console.log(e.detail.errMsg)
+        console.log(e.detail.iv)
+        console.log(e.detail.encryptedData)
+    },
     data : {
         head_img : '../res/img/class_freezefish.png',
-        user_name : '张三丰',
-        mobile : '189****5478',
+        userinfo : {
+            id : null,
+            nickname : null,
+            mobile : null,
+            avatarUrl : null
+        },
         tab : 0,
         tab_list : [
             {name : '我的订单', img : '../res/img/my_order.png', uri : '../my_order/index'},
@@ -20,6 +61,33 @@ Page({
         var tabSize = common.getTabSize(4, true);
         this.setData({
             tab  : tabSize.width,
+        });
+        var obj = this;
+        wx.getUserInfo({
+            success(res) {
+                console.log(res);
+                let app = getApp();
+                wx.request({
+                    url: `${app.globalData.domain}/mobile/user/login`, // 仅为示例，并非真实的接口地址
+                    header: {
+                        'content-type': 'application/json' // 默认值
+                    },
+                    data: {
+                        code : app.globalData.code,
+                        encryptedData : res.encryptedData,
+                        iv : res.iv
+                    },
+                    method: "POST",
+                    success(res) {
+                        if (res.data.code === 0) {
+                            app.globalData.user_id = res.data.data.id;
+                            obj.setData({
+                                userinfo : res.data.data
+                            })
+                        }
+                    }
+                });
+            }
         });
     },
     jumpTo : function (event) {

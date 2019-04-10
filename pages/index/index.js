@@ -122,7 +122,7 @@ Page({
         var id = event.currentTarget.dataset.cid;
         console.log(id);
         let app = getApp();
-        app.id = id;
+        app.class_id = id;
         wx.switchTab({
             url : `../class/index`,
             success : function (res) {
