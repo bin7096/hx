@@ -118,6 +118,31 @@ Page({
             fail : function (res) {
                 console.log(res);
             }
-        })
+        });
+        let app = getApp();
+        if (!app.globalData.mobile) {
+            wx.showToast({title:'请先获取微信手机号'});return;
+        }
+        if (app.globalData.user_id) {
+            let user_id = app.globalData.user_id;
+            wx.request({
+                url: `${app.globalData.domain}/mobile/goods/addToCar`, // 仅为示例，并非真实的接口地址
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                data: {
+                    id : id,
+                    user_id : user_id
+                },
+                method: "POST",
+                success(res) {
+                    if (res.data.code === 0) {
+                        
+                    }
+                }
+            });
+        }else{
+            wx.showToast({title: '请先登录'});
+        }
     }
 })

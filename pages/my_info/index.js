@@ -20,8 +20,14 @@ Page({
                         method: "POST",
                         success(res) {
                             if (res.data.code === 0) {
-                                let userinfo = obj.data.userinfo;
-                                console.log(userinfo);
+                                let userinfo = res.data.data;
+                                app.globalData.user_id = userinfo.id;
+                                app.globalData.nickname = userinfo.nickname;
+                                app.globalData.avatarUrl = userinfo.avatarUrl;
+                                app.globalData.mobile = userinfo.mobile;
+                                obj.setData({
+                                    userinfo : userinfo
+                                });
                             }
                         }
                     });
@@ -33,9 +39,6 @@ Page({
                 wx.showToast({title: '获取手机失败'});
             }
         });
-        console.log(e.detail.errMsg)
-        console.log(e.detail.iv)
-        console.log(e.detail.encryptedData)
     },
     data : {
         head_img : '../res/img/class_freezefish.png',
@@ -63,32 +66,49 @@ Page({
             tab  : tabSize.width,
         });
         var obj = this;
-        wx.getUserInfo({
-            success(res) {
-                console.log(res);
-                let app = getApp();
-                wx.request({
-                    url: `${app.globalData.domain}/mobile/user/login`, // 仅为示例，并非真实的接口地址
-                    header: {
-                        'content-type': 'application/json' // 默认值
-                    },
-                    data: {
-                        code : app.globalData.code,
-                        encryptedData : res.encryptedData,
-                        iv : res.iv
-                    },
-                    method: "POST",
-                    success(res) {
-                        if (res.data.code === 0) {
-                            app.globalData.user_id = res.data.data.id;
-                            obj.setData({
-                                userinfo : res.data.data
-                            })
+        var that = getApp();
+        var code = that.globalData.code2;
+        if (!that.globalData.user_id) {
+            wx.getUserInfo({
+                success(res) {
+                    let app = that;
+                    wx.request({
+                        url: `${app.globalData.domain}/mobile/user/login`, // 仅为示例，并非真实的接口地址
+                        header: {
+                            'content-type': 'application/json' // 默认值
+                        },
+                        data: {
+                            code : code,
+                            encryptedData : res.encryptedData,
+                            iv : res.iv
+                        },
+                        method: "POST",
+                        success(res) {
+                            if (res.data.code === 0) {
+                                app.globalData.user_id = res.data.data.id;
+                                app.globalData.nickname = res.data.data.nickname;
+                                app.globalData.avatarUrl = res.data.data.avatarUrl;
+                                app.globalData.mobile = res.data.data.mobile;
+                                obj.setData({
+                                    userinfo : res.data.data
+                                })
+                            }
                         }
-                    }
-                });
+                    });
+                }
+            });
+        }else{
+            let app = getApp();
+            let userinfo = {
+                id : app.globalData.user_id,
+                nickname : app.globalData.nickname,
+                avatarUrl : app.globalData.avatarUrl,
+                mobile : app.globalData.mobile
             }
-        });
+            this.setData({
+                userinfo : userinfo
+            });
+        }
     },
     jumpTo : function (event) {
         var uri = event.currentTarget.dataset.uri;

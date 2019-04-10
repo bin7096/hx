@@ -1,6 +1,5 @@
 {
     "pages":[
-        "pages/my_info/index",
         "pages/index/index",
         "pages/detail/index",
         "pages/help/index",
@@ -14,7 +13,8 @@
         "pages/my_order/index",
         "pages/logs/logs",
         "pages/my_eval/index",
-        "pages/to_eval/index"
+        "pages/to_eval/index",
+        "pages/my_info/index"
     ],
     "window":{
         "backgroundColor": "#CCC",
