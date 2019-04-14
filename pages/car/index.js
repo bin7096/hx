@@ -4,18 +4,37 @@ Page({
         rempx : 16,
         selecteds : [''],
         goods : [
-            {id : 0, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 10, 'selected' : false},
-            {id : 1, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
-            {id : 2, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
-            {id : 3, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
-            {id : 4, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
-            {id : 5, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', 'price' : 39.9, 'number' : 1, 'selected' : false},
+            {id : 0, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 10, selected : false},
+            {id : 1, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+            {id : 2, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+            {id : 3, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+            {id : 4, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+            {id : 5, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
         ],
         total_price : 0,
         all_selected : false,
     },
     onLoad : function () {
-
+        let obj = this;
+        let app = getApp();
+        let user_id = app.globalData.user_id;
+        console.log(user_id);
+        wx.request({
+            url: `${app.globalData.domain}/mobile/goods/carList`,  
+            header: {
+                'content-type': 'application/json' // 默认值
+            },
+            data: {
+                user_id : user_id
+            },
+            method: "POST",
+            success(res) {
+                let goods = res.data.data;
+                obj.setData({
+                    goods : goods
+                });
+            }
+        });
     },
     selected_once : function (event) {
         var id = event.currentTarget.dataset.gid;

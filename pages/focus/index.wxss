@@ -1,0 +1,68 @@
+.line{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.8rem;
+}
+.left{
+    display: inline-block;
+    width: 5rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 1px solid #CCC;
+}
+.right{
+    display: inline-block;
+    width: calc(100% - 5rem);
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 1px solid #CCC;
+    color: #999;
+}
+.right-input{
+    line-height: calc(3rem / 1.4rem);
+}
+.avatar{
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    top: 0.5rem;
+}
+.avatar-line{
+    height: 5rem;
+}
+.avatar-left,.avatar-right{
+    display: inline-block;
+    height: 5rem;
+    line-height: 5rem;
+    position: fixed;
+    top: 0;
+}
+.avatar-left{
+    left: 1rem;
+}
+.avatar-right{
+    left: 6rem;
+    width: calc(100% - 7rem);
+}
+.btn-line{
+    height: 2rem;
+    padding: 0.5rem 1rem;
+}
+.success-div{
+    height:30rem;
+    padding-top: 12.5rem;
+    background-color:#FFFFFF;
+}
+.success{
+    text-align: center;
+}
+.success-icon{
+    width: 4rem;
+    height: 4rem;
+}
+.input{
+    display: inline-block;
+    position: relative;
+    top: 0.3rem;
+    color: #000;
+}

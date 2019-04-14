@@ -7,7 +7,7 @@ Page({
                 if (res.code) {
                     let app = getApp();
                     wx.request({
-                        url: `${app.globalData.domain}/mobile/user/getMobile`, // 仅为示例，并非真实的接口地址
+                        url: `${app.globalData.domain}/mobile/user/getMobile`,  
                         header: {
                             'content-type': 'application/json' // 默认值
                         },
@@ -60,7 +60,7 @@ Page({
             {name : '敬请期待', img : '../res/img/more.png', uri : false},
         ]
     },
-    onLoad : function () {
+    onLoad : function (option) {
         var tabSize = common.getTabSize(4, true);
         this.setData({
             tab  : tabSize.width,
@@ -73,7 +73,7 @@ Page({
                 success(res) {
                     let app = that;
                     wx.request({
-                        url: `${app.globalData.domain}/mobile/user/login`, // 仅为示例，并非真实的接口地址
+                        url: `${app.globalData.domain}/mobile/user/login`,  
                         header: {
                             'content-type': 'application/json' // 默认值
                         },
@@ -112,6 +112,7 @@ Page({
     },
     jumpTo : function (event) {
         var uri = event.currentTarget.dataset.uri;
+        console.log(uri)
         if (uri === false) {
             return;
         }

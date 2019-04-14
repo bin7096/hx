@@ -1,6 +1,10 @@
 {
     "pages":[
+        "pages/address/index",
         "pages/index/index",
+        "pages/focus/index",
+        "pages/spreader/index",
+        "pages/my_info/index",
         "pages/detail/index",
         "pages/help/index",
         "pages/service/index",
@@ -8,13 +12,11 @@
         "pages/exchange/index",
         "pages/class/index",
         "pages/car/index",
-        "pages/address/index",
         "pages/edit_addr/index",
         "pages/my_order/index",
         "pages/logs/logs",
         "pages/my_eval/index",
-        "pages/to_eval/index",
-        "pages/my_info/index"
+        "pages/to_eval/index"
     ],
     "window":{
         "backgroundColor": "#CCC",

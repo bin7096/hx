@@ -5,12 +5,12 @@
             <image class="left" wx:else src="{{head_img}}" />
             <span class="right">
                 <span class="line" wx:if="{{userinfo.nickname !== null}}">{{userinfo.nickname}}</span>
-                <button wx:else open-type="getUserInfo" style="height:1.2rem;line-height:1.2rem;background-color:#074ea0;color:#FFF;border:1none;">获取用户信息</button>
+                <button wx:else open-type="getUserInfo" style="height:1.2rem;line-height:1.2rem;background-color:#074ea0;color:#FFF;border:none;">获取用户信息</button>
                 <span class="line" wx:if="{{userinfo.mobile !== null}}">
                     {{userinfo.mobile}}
                     <image class="edit-icon" src="../res/img/edit.png" />
                 </span>
-                <button wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="height:1.2rem;line-height:1.2rem;background-color:#074ea0;color:#FFF;border:1none;margin-top:1rem;">获取手机号码</button>
+                <button wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="height:1.2rem;line-height:1.2rem;background-color:#074ea0;color:#FFF;border:none;margin-top:1rem;">获取手机号码</button>
             </span>
         </view>
     </view>

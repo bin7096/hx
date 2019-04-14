@@ -27,7 +27,7 @@ App({
                         let that = app;
                         that.globalData.code = res.code;
                         wx.request({
-                            url: `${that.globalData.domain}/mobile/user/getUserInfo`, // 仅为示例，并非真实的接口地址
+                            url: `${that.globalData.domain}/mobile/user/getUserInfo`,  
                             header: {
                                 'content-type': 'application/json' // 默认值
                             },
@@ -40,6 +40,7 @@ App({
                                     app.globalData.nickname = userinfo.nickname;
                                     app.globalData.avatarUrl = userinfo.avatarUrl;
                                     app.globalData.mobile = userinfo.mobile;
+                                    app.globalData.isSpreader = userinfo.isSpreader;
                                 }
                             }
                         });

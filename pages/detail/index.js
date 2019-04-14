@@ -31,7 +31,7 @@ Page({
         let id = option.id;
         console.log(p_size);
         wx.request({
-            url: `${app.globalData.domain}/mobile/goods/detail`, // 仅为示例，并非真实的接口地址
+            url: `${app.globalData.domain}/mobile/goods/detail`,  
             header: {
               'content-type': 'application/json' // 默认值
             },

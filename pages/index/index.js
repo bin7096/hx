@@ -55,7 +55,7 @@ Page({
             {id : 4,title : '个人中心', s : '', src : '../res/img/bt_info.png'}
         ]
     },
-    onLoad: function () {
+    onReady: function (option) {
         let t_size   = common.getTabSize(4, true);
         let c_size   = common.getTabSize(2, false, false, 0.95, 0.7);
         let c_img    = common.getTabSize(2, true, c_size.width, 1).width;
@@ -73,7 +73,7 @@ Page({
             success(res) {
                 if (res.data.code === 0) {
                     let classify = res.data.data;
-                    console.log(classify);
+                    // console.log(classify);
                     obj.setData({
                         classify : classify
                     });

@@ -42,7 +42,7 @@ Page({
         let id = app.class_id;
         console.log(id);
         wx.request({
-            url: `${app.globalData.domain}/mobile/classify/classifys`, // 仅为示例，并非真实的接口地址
+            url: `${app.globalData.domain}/mobile/classify/classifys`,  
             header: {
               'content-type': 'application/json' // 默认值
             },
@@ -59,7 +59,7 @@ Page({
             }
         });
         wx.request({
-            url: `${app.globalData.domain}/mobile/goods/goodsList`, // 仅为示例，并非真实的接口地址
+            url: `${app.globalData.domain}/mobile/goods/goodsList`,  
             header: {
               'content-type': 'application/json' // 默认值
             },
@@ -87,7 +87,7 @@ Page({
         });
         classify[k].s = ' cl-selected';
         wx.request({
-            url: `${app.globalData.domain}/mobile/goods/goodsList`, // 仅为示例，并非真实的接口地址
+            url: `${app.globalData.domain}/mobile/goods/goodsList`,  
             header: {
               'content-type': 'application/json' // 默认值
             },
@@ -126,7 +126,7 @@ Page({
         if (app.globalData.user_id) {
             let user_id = app.globalData.user_id;
             wx.request({
-                url: `${app.globalData.domain}/mobile/goods/addToCar`, // 仅为示例，并非真实的接口地址
+                url: `${app.globalData.domain}/mobile/goods/addToCar`,  
                 header: {
                   'content-type': 'application/json' // 默认值
                 },

@@ -1,0 +1,43 @@
+<view style="background-color:#FFFFFF;" wx:if="{{showSuccess === false}}">
+    <view class="avatar-line">
+        <span class="left avatar-left">头像：</span>
+        <span class="right avatar-right">
+            <image class="avatar" src="{{avatarUrl}}" />
+        </span>
+    </view>
+    <view class="line">
+        <span class="left">微信昵称：</span>
+        <span class="right">{{nickname}}</span>
+    </view>
+    <view class="line">
+        <span class="left">手机号码：</span>
+        <span class="right">{{mobile}}</span>
+    </view>
+    <view class="line">
+        <span class="left">推广者账号：</span>
+        <span class="right">{{account}}</span>
+    </view>
+    <view class="line">
+        <span class="left">推广者昵称：</span>
+        <span class="right right-input"><input class="input" type="text" bindblur="setRealname" placeholder="请输入推广者昵称" value="{{realname}}" /></span>
+    </view>
+    <view class="line">
+        <span class="left">邮箱：</span>
+        <span class="right right-input"><input class="input" type="text" bindblur="setEmail" placeholder="请输入邮箱" value="{{email}}" /></span>
+    </view>
+    <view class="btn-line" wx:if="{{user_id === ''}}">
+        <button open-type="getUserInfo" bind:tap="onGetUserInfo" style="height:2rem;line-height:2rem;background-color:#074ea0;color:#FFF;border:none;">获取用户信息</button>
+    </view>
+    <view class="btn-line" wx:if="{{mobile === '请先获取手机号码'}}">
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="height:2rem;line-height:2rem;background-color:#074ea0;color:#FFF;border:none;">获取手机号码</button>
+    </view>
+    <view class="btn-line">
+        <button bind:tap="submitInfo" style="height:2rem;line-height:2rem;background-color:#074ea0;color:#FFF;border:none;">提交绑定信息</button>
+    </view>
+</view>
+<view class="success-div" wx:else>
+    <view class="success">
+        <image class="success-icon" src="../res/img/success.png" />
+    </view>
+    <view class="success">{{successText}}</view>
+</view>
