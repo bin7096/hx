@@ -12,7 +12,7 @@
         <span class="g-p">
             <text class="g-price">￥{{goods_info.price}}</text>
             <text class="g-original-p">￥{{goods_info.original_price}}</text>
-            <span class="add-to-car">加入购物车</span>
+            <span class="add-to-car" bindtap="addToCar" data-id="{{goods_info.id}}">加入购物车</span>
         </span>
     </view>
     <view class="goods-info-active" wx:if="{{goods_info.active !== ''}}">

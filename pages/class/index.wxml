@@ -10,7 +10,7 @@
         </view>
         <view class="goods-list">
             <view class="">
-                <span class="goods" wx:for="{{goods}}" wx:key="gkey" wx:for-item="g">
+                <span class="goods" wx:for="{{goods}}" wx:key="gkey" wx:for-item="g" bindtap="toDetail" data-id="{{g.id}}">
                     <image class="goods-img" src="{{g.pic}}" style="width:{{g_img_w}}px;height:{{g_img_w}}px" />
                     <span class="goods-info">
                         <text class="goods-title">{{g.title}}</text>

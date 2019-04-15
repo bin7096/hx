@@ -4,6 +4,7 @@ Page({
     data : {
         pic_h : 0,
         goods_info : {
+            id : 0,
             pic : [
                 '../res/img/class_freezefish.png',
                 '../res/img/class_freezefish.png',
@@ -28,6 +29,7 @@ Page({
         let p_size   = common.getTabSize(1, true);
         let obj = this;
         let app = getApp();
+        let user_id = app.globalData.user_id;
         let id = option.id;
         console.log(p_size);
         wx.request({
@@ -35,7 +37,10 @@ Page({
             header: {
               'content-type': 'application/json' // 默认值
             },
-            data:{id:id},
+            data:{
+                id : id,
+                user_id : user_id
+            },
             method: "POST",
             success(res) {
                 if (res.data.code === 0) {
@@ -54,5 +59,34 @@ Page({
         this.setData({
             pic_h : p_size.height
         });
+    },
+    addToCar : function (event) {
+        var id = event.currentTarget.dataset.id;
+        console.log(id);
+        let app = getApp();
+        if (!app.globalData.mobile) {
+            wx.showToast({title:'请先获取微信手机号'});return;
+        }
+        if (app.globalData.user_id) {
+            let user_id = app.globalData.user_id;
+            wx.request({
+                url: `${app.globalData.domain}/mobile/goods/addToCar`,  
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                data: {
+                    id : id,
+                    user_id : user_id
+                },
+                method: "POST",
+                success(res) {
+                    if (res.data.code === 0) {
+                        
+                    }
+                }
+            });
+        }else{
+            wx.showToast({title: '请先登录'});
+        }
     }
 })

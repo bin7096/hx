@@ -86,6 +86,7 @@ Page({
             item.s = '';
         });
         classify[k].s = ' cl-selected';
+        let app = getApp();
         wx.request({
             url: `${app.globalData.domain}/mobile/goods/goodsList`,  
             header: {
@@ -144,5 +145,17 @@ Page({
         }else{
             wx.showToast({title: '请先登录'});
         }
+    },
+    toDetail : function (event) {
+        var id = event.currentTarget.dataset.id;
+        wx.navigateTo({
+            url : `../detail/index?id=${id}`,
+            success : function (res) {
+                console.log('success');
+            },
+            fail : function (err) {
+                console.log('failed');
+            }
+        });
     }
 })
