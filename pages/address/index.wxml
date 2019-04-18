@@ -1,14 +1,18 @@
 <view class="address" style="height:{{winHeight}}px;">
     <view class="title">我的收货地址</view>
     <view class="addr" wx:for="{{address}}" wx:for-item="add" wx:key="aid">
-        <span class="left">
+        <span class="left" bindtap="select_addr" data-id="{{add.id}}">
             <span class="info">
                 <span>{{add.name}}</span><span class="mobile">{{add.mobile}}</span>    
             </span>
             <span class="address-detail">{{add.address}}</span>
         </span>
-        <span class="right">
-            <image class="edit-icon" src="../res/img/bt_car.png"/>
+        <span class="right" bindtap="to_edit" data-id="{{add.id}}">
+            <image class="edit-icon" src="../res/img/edit.png"/>
+        </span>
+        <span class="right" bindtap="delAddr" data-id="{{add.id}}">
+            <image class="edit-icon" src="../res/img/del.png"/>
         </span>
     </view>
 </view>
+<view class="btn" bindtap="addAddr">+ 添加地址</view>

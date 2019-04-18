@@ -1,3 +1,4 @@
+<view class="addrList" bindtap="select_addr" wx:if="{{addr_id === 0}}">请选择收货地址</view>
 <view class="goods-list">
     <view class="goods" wx:for="{{goods}}" wx:key="gid" wx:for-item="g">
         <view class="goods-left">
@@ -30,6 +31,6 @@
     </span>全选
     <span class="bt-right">
         <span class="total-price">合计：<span class="total">￥{{total_price}}</span></span>
-        <span class="to-account">结算</span>
+        <span class="to-account" bindtap="makeOrder">结算</span>
     </span>
 </view>

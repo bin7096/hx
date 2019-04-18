@@ -11,18 +11,18 @@
             </picker>
         </view>
         <view class="line">
-            <span class="label">楼号-门牌号：</span><input class="input" placeholder="例如：A座906室" bindblur="logInfo" data-name="house_number" />
+            <span class="label">楼号-门牌号：</span><input class="input" placeholder="例如：A座906室" value="{{address}}" bindinput="logNumber" data-name="house_number" />
         </view>
         <view class="line">
-            <span class="label">收货人：</span><input class="input" placeholder="请填写收货人姓名" bindblur="logInfo" data-name="user_name" />
+            <span class="label">收货人：</span><input class="input" placeholder="请填写收货人姓名" value="{{name}}" bindinput="logName" data-name="user_name" />
         </view>
         <view class="line">
-            <span class="label">联系电话：</span><input class="input" placeholder="请填写联系电话" bindblur="logInfo" data-name="mobile" />
+            <span class="label">联系电话：</span><input class="input" placeholder="请填写联系电话" value="{{mobile}}" bindinput="logMobile" maxlength="11" data-name="mobile" />
         </view>
         <view class="line">
             <radio-group bindchange="radioChange">
-                <span  wx:for="{{radio_vals}}" wx:for-item="rv" wx:for-index="r" wx:key="k">
-                    <radio class="radio" wx:if="{{r === 0}}" value="{{rv.id}}" checked="true" color="#074ea0">
+                <span  wx:for="{{radio_vals}}" wx:for-item="rv" wx:for-index="r" wx:key="k" bindtap="setLabel" data-id="{{rv.id}}">
+                    <radio class="radio" wx:if="{{label === rv.id}}" value="{{rv.id}}" checked="true" color="#074ea0">
                         {{rv.name}}
                     </radio>
                     <radio class="radio" wx:else value="{{rv.id}}" color="#074ea0">
