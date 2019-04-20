@@ -1,7 +1,8 @@
 {
     "pages":[
-        "pages/address/index",
+        "pages/exchange/index",
         "pages/car/index",
+        "pages/address/index",
         "pages/index/index",
         "pages/edit_addr/index",
         "pages/class/index",
@@ -12,7 +13,6 @@
         "pages/help/index",
         "pages/service/index",
         "pages/service/detail",
-        "pages/exchange/index",
         "pages/my_order/index",
         "pages/logs/logs",
         "pages/my_eval/index",

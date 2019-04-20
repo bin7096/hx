@@ -111,6 +111,9 @@ Page({
             total_price : total_price
         });
     },
+    onShow : function () {
+        console.log(11111);
+    },
     select_addr : function () {
         wx.navigateTo({
             url : `../address/index?page=car`,
