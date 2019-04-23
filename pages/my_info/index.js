@@ -92,7 +92,7 @@ Page({
                                 app.globalData.mobile = res.data.data.mobile;
                                 obj.setData({
                                     userinfo : res.data.data
-                                })
+                                });
                             }
                         }
                     });
@@ -110,6 +110,51 @@ Page({
                 userinfo : userinfo
             });
         }
+    },
+    getInfo : function (res) {
+        let obj = this;
+        wx.getUserInfo({
+            success(res) {
+                let app = getApp();
+                let code = app.globalData.code2;
+                wx.request({
+                    url: `${app.globalData.domain}/mobile/user/login`,  
+                    header: {
+                        'content-type': 'application/json' // 默认值
+                    },
+                    data: {
+                        code : code,
+                        encryptedData : res.encryptedData,
+                        iv : res.iv
+                    },
+                    method: "POST",
+                    success(res) {
+                        if (res.data.code === 0) {
+                            app.globalData.user_id = res.data.data.id;
+                            app.globalData.nickname = res.data.data.nickname;
+                            app.globalData.avatarUrl = res.data.data.avatarUrl;
+                            app.globalData.mobile = res.data.data.mobile;
+                            obj.setData({
+                                userinfo : res.data.data
+                            });
+                        }else{
+                            wx.showToast({
+                                title: '登录失败',
+                                icon: 'none'
+                            });
+                              
+                        }
+                    },
+                    fail(res){
+                        wx.showToast({
+                            title: '获取用户信息失败',
+                            icon: 'none'
+                        });
+                          
+                    }
+                });
+            }
+        });
     },
     jumpTo : function (event) {
         var uri = event.currentTarget.dataset.uri;
