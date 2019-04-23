@@ -1,0 +1,31 @@
+<import src="../res/wxParse/wxParse.wxml"/>
+<view class="container" style="background-color:#FFFFFF;">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="height:{{pic_h}}px;">
+        <block wx:for="{{goods_info.pic}}" wx:for-item="p" wx:key="*this">  
+            <swiper-item>  
+                <image src="{{p}}" class="slide-image" mode="aspectFill"/>  
+            </swiper-item>  
+        </block>  
+    </swiper>
+    <view class="goods-info-title">
+        <text class="g-title">{{goods_info.title}}</text>
+        <span class="g-p">
+            <text class="g-price">{{goods_info.integral}}积分</text>
+            <text class="g-original-p">￥{{goods_info.price}}</text>
+            <span class="add-to-car" bindtap="addToCar" data-id="{{goods_info.id}}">积分兑换</span>
+        </span>
+    </view>
+    <view class="goods-info-active" wx:if="{{goods_info.active !== ''}}">
+        <span class="goods-active">
+            促销
+            <span class="g-active">{{goods_info.active}}</span>
+            <text class="g-active-info">{{goods_info.active_info}}</text>
+        </span>
+    </view>
+    <view class="">
+        <span class="g-detail-title">商品详情</span>
+    </view>
+    <view>
+        <template class="g-detail-info" is="wxParse" data="{{wxParseData:detail.nodes}}" />
+    </view>
+</view>

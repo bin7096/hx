@@ -6,11 +6,10 @@
                 <span class="time">下单时间：01-06 15:28</span>
                 <span class="status" wx:if="{{o.status === '1'}}" style="color:red;">待支付</span>
                 <span class="status" wx:elif="{{o.status === '2'}}" style="color:green;">已支付</span>
-                <span class="status" wx:elif="{{o.status === '3'}}" style="color:blue;">配送中</span>
-                <span class="status" wx:elif="{{o.status === '4'}}">已完成</span>
+                <span class="status" wx:elif="{{o.status === '3'}}">已完成</span>
             </span>
         </view>
-        <view class="order-goods" wx:for="{{o.goods}}" wx:for-item="g" wx:key="gid">
+        <view class="order-goods" wx:for="{{o.goods}}" wx:for-item="g" wx:key="gid" bindtap="toDetail" data-id="{{g.id}}">
             <view class="line title">
                 <span class="name">{{g.name}} ></span>
             </view>
@@ -23,7 +22,8 @@
             </view>
         </view>
         <view class="line btn">
-            <span class="button">再次购买</span>
+            <span class="button" wx:if="{{o.status === '1'}}" bindtap="toPay" data-id="{{o.id}}">立即支付</span>
+            <span class="button" wx:else bindtap="toCar" data-id="{{o.id}}">再次购买</span>
         </view>
     </view>
 </view>

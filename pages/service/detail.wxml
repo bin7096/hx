@@ -1,6 +1,6 @@
 <view style="width:100%;background-color:#FFFFFF">
-    <view class="line" wx:for="{{list}}" wx:for-item="l" wx:key="id">
-        <view class="title">*{{l.title}}</view>
-        <view class="value">{{l.value}}</view>
+    <view class="line">
+        <view class="title">*{{info.title}}</view>
+        <view class="value">{{info.value}}</view>
     </view>
 </view>

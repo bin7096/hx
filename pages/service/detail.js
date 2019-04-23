@@ -1,18 +1,37 @@
 Page({
     data : {
-        list : [
-            {id : 1, title : "修改地址、收货时间（改天再送）、收货人、收货电话", value : "不支持修改，如订单提交错误，为快速解决您的问题，建议取消订单并重新下单"},
-            {id : 2, title : "修改地址、收货时间（改天再送）、收货人、收货电话", value : "不支持修改，如订单提交错误，为快速解决您的问题，建议取消订单并重新下单"},
-            {id : 3, title : "修改地址、收货时间（改天再送）、收货人、收货电话", value : "不支持修改，如订单提交错误，为快速解决您的问题，建议取消订单并重新下单"},
-            {id : 4, title : "修改地址、收货时间（改天再送）、收货人、收货电话", value : "不支持修改，如订单提交错误，为快速解决您的问题，建议取消订单并重新下单"},
-            {id : 5, title : "修改地址、收货时间（改天再送）、收货人、收货电话", value : "不支持修改，如订单提交错误，为快速解决您的问题，建议取消订单并重新下单"},
-            {id : 6, title : "修改地址、收货时间（改天再送）、收货人、收货电话", value : "不支持修改，如订单提交错误，为快速解决您的问题，建议取消订单并重新下单"},
-            {id : 7, title : "修改地址、收货时间（改天再送）、收货人、收货电话", value : "不支持修改，如订单提交错误，为快速解决您的问题，建议取消订单并重新下单"},
-            {id : 8, title : "修改地址、收货时间（改天再送）、收货人、收货电话", value : "不支持修改，如订单提交错误，为快速解决您的问题，建议取消订单并重新下单"},
-        ]
+        info : {
+            title : "", 
+            value : ""
+        }
     },
     onLoad : function (option) {
         let id = option.id;
-        console.log(id);
+        let app = getApp();
+        let obj = this;
+        wx.request({
+            url: `${app.globalData.domain}/mobile/other/problemInfo`, // 仅为示例，并非真实的接口地址
+            header: {
+                'content-type': 'application/json' // 默认值
+            },
+            data : {
+                id : id
+            },
+            method: "POST",
+            success(res) {
+                if (res.data.code === 0) {
+                    let info = res.data.data.info;
+                    obj.setData({
+                        info : info
+                    });
+                }else{
+                    wx.showToast({
+                        title: res.data.msg,
+                        icon: 'none',
+                    });
+                        
+                }
+            }
+        });
     }
 })

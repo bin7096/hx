@@ -2,12 +2,12 @@
 <view class="container">
     <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
         <block wx:for="{{banners}}" wx:for-item="b" wx:key="*this">  
-            <swiper-item>  
-                <image src="{{b}}" class="slide-image" mode="aspectFill"/>  
+            <swiper-item bindtap="toGoods" data-id="{{b.gid}}">  
+                <image src="{{b.src}}" class="slide-image" mode="aspectFill"/>  
             </swiper-item>  
         </block>  
     </swiper>
-    <view class="tab">
+    <view class="tab" style="display:none;">
         <span wx:for="{{tabImgs}}" wx:for-item="ti" wx:key="tiid" class="tab-label tab-{{index}}" style="width:{{t_width}}px;height:{{t_height}}px;">
             <image class="tab-img" src="{{ti.src}}" />
             <text class="tab-title">{{ti.title}}</text>
@@ -43,7 +43,7 @@
             </span>
         </span>
     </view>
-    <view class="dynamic" style="width:{{dynamic}}px;padding:0.5rem {{dypadding}}rem;">
+    <view class="dynamic" style="width:{{dynamic}}px;padding:0.5rem {{dypadding}}rem;display:none;">
         <span class="d-left">商家动态</span>
         <span class="d-right" style="width:{{dr_right}}px">
             <span class="dr-top">
@@ -57,7 +57,7 @@
         </span>
     </view>
     <view style="height:3px;"></view>
-    <view class="video">
+    <view class="video" style="display:none;">
         <video style="width:{{v_width}}px;z-index:2;" src="http://vjs.zencdn.net/v/oceans.mp4" poster="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547387028719&di=2affc164506ee632d4fb1c20aec42b59&imgtype=0&src=http%3A%2F%2Fimg.bimg.126.net%2Fphoto%2Fq-i-sQFAewKeaeoRzjeVXw%3D%3D%2F3398247393828181060.jpg"></video>
     </view>
     <view style="height:3px;"></view>

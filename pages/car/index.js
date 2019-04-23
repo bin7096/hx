@@ -4,44 +4,41 @@ Page({
         addr_id : 0,
         rempx : 16,
         selecteds : [''],
-        // goods : [
-        //     {id : 0, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 10, selected : false},
-        //     {id : 1, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
-        //     {id : 2, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
-        //     {id : 3, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
-        //     {id : 4, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
-        //     {id : 5, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
-        // ],
-        goods : [],
+        goods : [
+            // {id : 0, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 10, selected : false},
+            // {id : 1, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+            // {id : 2, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+            // {id : 3, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+            // {id : 4, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+            // {id : 5, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', src : '../res/img/class_freezefish.png', specification : '美威 智利原味三文鱼排（大西洋鲑）240g/袋 4片装 海鲜水产', price : 39.9, number : 1, selected : false},
+        ],
         total_price : 0,
         all_selected : false,
     },
     onShow : function () {
-        if (this.data.addr_id !== 0) {
-            return;
-        }
+        // if (this.data.addr_id !== 0) {
+        //     return;
+        // }
         let obj = this;
         let app = getApp();
-        setTimeout(() => {
-            let user_id = app.globalData.user_id;
-            console.log(user_id);
-            wx.request({
-                url: `${app.globalData.domain}/mobile/goods/carList`,  
-                header: {
-                    'content-type': 'application/json' // 默认值
-                },
-                data: {
-                    user_id : user_id
-                },
-                method: "POST",
-                success(res) {
-                    let goods = res.data.data;
-                    obj.setData({
-                        goods : goods
-                    });
-                }
-            });
-        }, 1000);
+        let user_id = app.globalData.user_id;
+        console.log(user_id);
+        wx.request({
+            url: `${app.globalData.domain}/mobile/goods/carList`,  
+            header: {
+                'content-type': 'application/json' // 默认值
+            },
+            data: {
+                user_id : user_id
+            },
+            method: "POST",
+            success(res) {
+                let goods = res.data.data;
+                obj.setData({
+                    goods : goods
+                });
+            }
+        });
     },
     selected_once : function (event) {
         var id = event.currentTarget.dataset.gid;
@@ -111,9 +108,6 @@ Page({
             total_price : total_price
         });
     },
-    onShow : function () {
-        console.log(11111);
-    },
     select_addr : function () {
         wx.navigateTo({
             url : `../address/index?page=car`,
@@ -157,7 +151,54 @@ Page({
             },
             method: "POST",
             success(res) {
-                console.log(res);
+                if (res.data.code === 0) {
+                    let data = res.data.data;
+                    console.log(data);
+                    wx.requestPayment({
+                        'appId' : data.appId,
+                        'timeStamp': data.timeStamp,
+                        'nonceStr': data.nonceStr,
+                        'package': data.package,
+                        'signType': 'MD5',
+                        'paySign': data.paySign,
+                        'success':function(res){
+                            wx.showToast({
+                                title: '支付成功',
+                                icon: 'none'
+                            });
+                        },
+                        'fail':function(res){
+                            console.log(res);
+                            wx.showToast({
+                                title: '支付失败',
+                                icon: 'none'
+                            });
+                        },
+                    });
+                    wx.request({
+                        url: `${app.globalData.domain}/mobile/goods/carList`,  
+                        header: {
+                            'content-type': 'application/json' // 默认值
+                        },
+                        data: {
+                            user_id : user_id
+                        },
+                        method: "POST",
+                        success(res) {
+                            let goods = res.data.data;
+                            obj.setData({
+                                goods : goods,
+                                total_price : 0,
+                                all_selected : false
+                            });
+                        }
+                    });
+                }else{
+                    wx.showToast({
+                        title: res.data.msg,
+                        icon: 'none'
+                    });
+                }
             }
         });
     }

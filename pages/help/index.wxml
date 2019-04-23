@@ -1,12 +1,12 @@
 <view style="margin-top:0.5rem;">
-    <view class="line">
-        <view class="title">
-            <span class="left">咨询问题1</span>
-            <image class="right" src="../res/img/top.png" />
+    <view class="line" wx:for="{{list}}" wx:for-item="l" wx:for-index="lid" wx:key="lk">
+        <view class="title" bindtap="show" data-k="{{lid}}">
+            <span class="left">{{l.title}}</span>
+            <image class="right" wx:if="{{l.status === true}}" src="../res/img/buttom.png" />
+            <image class="right" wx:else src="../res/img/top.png" />
         </view>
-        <view class="query">
-            <view class="q-title">问题问题问题</view>
-            <view class="q-value">问题回复问题回复问题回复问题回复</view>
+        <view class="query" wx:if="{{l.status === true}}">
+            <view class="q-value">{{l.value}}</view>
         </view>
     </view>
 </view>

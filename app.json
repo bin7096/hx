@@ -1,21 +1,21 @@
 {
     "pages":[
-        "pages/exchange/index",
-        "pages/car/index",
-        "pages/address/index",
         "pages/index/index",
-        "pages/edit_addr/index",
-        "pages/class/index",
-        "pages/focus/index",
-        "pages/spreader/index",
+        "pages/my_eval/index",
         "pages/my_info/index",
-        "pages/detail/index",
         "pages/help/index",
         "pages/service/index",
-        "pages/service/detail",
         "pages/my_order/index",
+        "pages/exchange/index",
+        "pages/class/index",
+        "pages/car/index",
+        "pages/address/index",
+        "pages/edit_addr/index",
+        "pages/focus/index",
+        "pages/spreader/index",
+        "pages/detail/index",
+        "pages/service/detail",
         "pages/logs/logs",
-        "pages/my_eval/index",
         "pages/to_eval/index"
     ],
     "window":{
@@ -46,8 +46,8 @@
                 "pagePath": "pages/car/index",  
                 "text": "购物车"  
             },{  
-                "selectedIconPath": "pages/res/img/bt_car_s.png",  
-                "iconPath": "pages/res/img/bt_car.png",  
+                "selectedIconPath": "pages/res/img/bt_info_s.png",  
+                "iconPath": "pages/res/img/bt_info.png",  
                 "pagePath": "pages/my_info/index",  
                 "text": "个人中心"  
             }

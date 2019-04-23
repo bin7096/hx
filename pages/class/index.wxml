@@ -1,20 +1,20 @@
 <import src="../template/common.wxml" />
 <view class="container">
-    <view class="search">
+    <!-- <view class="search">
         <input class="search-input" type="text" confirm-type="search" value=""></input>
         <image class="search-icon" src='../res/img/search.png'></image>
-    </view>
+    </view> -->
     <view class="list-index" style="height:{{height}}px">
         <view class="classify-list">
             <span wx:for="{{classifys}}" wx:key="c_id" wx:for-item="c" wx:for-index="index" class="classify{{c.s}}" bindtap="classTap" data-k="{{index}}">{{c.name}}</span>
         </view>
         <view class="goods-list">
             <view class="">
-                <span class="goods" wx:for="{{goods}}" wx:key="gkey" wx:for-item="g" bindtap="toDetail" data-id="{{g.id}}">
-                    <image class="goods-img" src="{{g.pic}}" style="width:{{g_img_w}}px;height:{{g_img_w}}px" />
+                <span class="goods" wx:for="{{goods}}" wx:key="gkey" wx:for-item="g">
+                    <image class="goods-img" src="{{g.pic}}" style="width:{{g_img_w}}px;height:{{g_img_w}}px" bindtap="toDetail" data-id="{{g.id}}" />
                     <span class="goods-info">
-                        <text class="goods-title">{{g.title}}</text>
-                        <text class="goods-desc">{{g.desc}}</text>
+                        <text class="goods-title" bindtap="toDetail" data-id="{{g.id}}">{{g.title}}</text>
+                        <text class="goods-desc" bindtap="toDetail" data-id="{{g.id}}">{{g.desc}}</text>
                         <span class="goods-active" wx:if="{{g.active !== ''}}">{{g.active}}</span>
                         <span class="goods-active" wx:else style="background-color:#FFF;">{{g.active}}</span>
                         <span class="goods-info-btm">
@@ -23,7 +23,7 @@
                         </span>
                     </span>
                 </span>
-                <span class="gl-bottom"></span>
+                <!-- <span class="gl-bottom"></span> -->
             </view>
         </view>
     </view>

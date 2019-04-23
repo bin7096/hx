@@ -13,10 +13,10 @@ Page({
         gl_width : 0,
         gl_img_h : 0,
         banners  : [
-            '../res/img/banner1.png',
-            '../res/img/banner2.png',
-            '../res/img/banner3.png',
-            '../res/img/banner4.png',
+            {gid : 0, src : '../res/img/banner1.png'},
+            // {gid : 1, src : '../res/img/banner2.png'},
+            // {gid : 2, src : '../res/img/banner3.png'},
+            // {gid : 3, src : '../res/img/banner4.png'},
         ],
         tabImgs  : [
             {src : '../res/img/index_active.png',   title : '最新活动'},
@@ -39,20 +39,14 @@ Page({
             bottom : ['夏夷贝','红里罗','红扇宝','柽子王','大海螺','...']
         },
         goods_list : [
-            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
-            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
-            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
-            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
-            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
-            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
-            {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
-            {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
-        ],
-        tabs : [
-            {id : 1,title : '首页', s : ' bt-selected', src : '../res/img/bt_index_s.png'},
-            {id : 2,title : '分类', s : '', src : '../res/img/bt_class.png'},
-            {id : 3,title : '购物车', s : '', src : '../res/img/bt_car.png'},
-            {id : 4,title : '个人中心', s : '', src : '../res/img/bt_info.png'}
+            // {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
+            // {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
+            // {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
+            // {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
+            // {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
+            // {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
+            // {title : '进口基围虾虾球包邮到家500g', src : '../res/img/goods1.jpg', price : 270, sale : 300},
+            // {title : '鲜美阳澄湖大闸蟹包邮500g', src : '../res/img/goods2.jpg', price : 270, sale : 300},
         ]
     },
     onReady: function (option) {
@@ -90,6 +84,20 @@ Page({
                     let goods_list = res.data.data;
                     obj.setData({
                         goods_list : goods_list
+                    });
+                }
+            }
+        });
+        wx.request({
+            url: `${app.globalData.domain}/mobile/other/banners`, // 仅为示例，并非真实的接口地址
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+                if (res.data.code === 0) {
+                    let banners = res.data.data;
+                    obj.setData({
+                        banners : banners
                     });
                 }
             }

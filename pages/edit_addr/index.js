@@ -82,7 +82,6 @@ Page({
         var radio_vals = this.data.radio_vals
         var app = getApp();
         var obj = this;
-        console.log(option);
         if (option === {}) {
             var id = 0;
         }else{

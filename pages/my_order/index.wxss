@@ -17,6 +17,9 @@
     font-weight: bold;
     color: #888;
 }
+.order-number{
+    /* font-size: 0.6rem; */
+}
 .status{
     float: right;
 }

@@ -3,9 +3,9 @@ Page({
     data : {
         winHeight : 0,
         address : [
-            {'id' : 0, 'name' : '张某', 'mobile' : '139****4679', 'address' : "山西省太原市山西省太原市山西省太原市"},
-            {'id' : 1, 'name' : '张某', 'mobile' : '139****4679', 'address' : "山西省太原市山西省太原市山西省太原市"},
-            {'id' : 2, 'name' : '张某', 'mobile' : '139****4679', 'address' : "山西省太原市山西省太原市山西省太原市"},
+            // {'id' : 0, 'name' : '张某', 'mobile' : '139****4679', 'address' : "山西省太原市山西省太原市山西省太原市"},
+            // {'id' : 1, 'name' : '张某', 'mobile' : '139****4679', 'address' : "山西省太原市山西省太原市山西省太原市"},
+            // {'id' : 2, 'name' : '张某', 'mobile' : '139****4679', 'address' : "山西省太原市山西省太原市山西省太原市"},
         ],
         back : false
     },
@@ -21,33 +21,30 @@ Page({
         }
     },
     onShow : function () {
-        console.log(111111);
         var winSize = common.winSize();
         this.setData({
             winHeight : winSize.height
         });
         var obj = this;
         var app = getApp();
-        setTimeout(function () {
-            var user_id = app.globalData.user_id;
-            console.log(user_id);
-            wx.request({
-                url: `${app.globalData.domain}/mobile/areas/addrList`,  
-                header: {
-                    'content-type': 'application/json' // 默认值
-                },
-                data: {
-                    user_id : user_id
-                },
-                method: "POST",
-                success(res) {
-                    var data = res.data.data;
-                    obj.setData({
-                        address : data
-                    });
-                }
-            });
-        },1000);
+        var user_id = app.globalData.user_id;
+        console.log(user_id);
+        wx.request({
+            url: `${app.globalData.domain}/mobile/areas/addrList`,  
+            header: {
+                'content-type': 'application/json' // 默认值
+            },
+            data: {
+                user_id : user_id
+            },
+            method: "POST",
+            success(res) {
+                var data = res.data.data;
+                obj.setData({
+                    address : data
+                });
+            }
+        });
     },
     addAddr : function () {
         wx.navigateTo({
@@ -106,7 +103,9 @@ Page({
             var pages = getCurrentPages();
             var prevPage = pages[pages.length - 2];
             prevPage.setData({
-                addr_id : id
+                addr_id : id,
+                all_selected : false,
+                total_price : 0
             });
             wx.navigateBack({
                 delta: 1

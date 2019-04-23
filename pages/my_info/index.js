@@ -54,10 +54,11 @@ Page({
             {name : '我的评价', img : '../res/img/my_eval.png', uri : '../my_eval/index'},
             {name : '我的地址', img : '../res/img/my_addr.png', uri : '../address/index'},
             {name : '积分兑换', img : '../res/img/exchange.png', uri : '../exchange/index'},
-            {name : '退款/售后', img : '../res/img/after_sale.png', uri : '../afterSale/index'},
-            {name : '客服反馈', img : '../res/img/service.png', uri : '../service/index'},
+            {name : '常见问题', img : '../res/img/service.png', uri : '../service/index'},
             {name : '帮助中心', img : '../res/img/help.png', uri : '../help/index'},
             {name : '敬请期待', img : '../res/img/more.png', uri : false},
+            {name : '敬请期待', img : '../res/img/more.png', uri : false},
+            // {name : '退款/售后', img : '../res/img/after_sale.png', uri : '../afterSale/index'},
         ]
     },
     onLoad : function (option) {

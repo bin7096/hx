@@ -1,4 +1,4 @@
 <view class="body">
-    <textarea class="textarea" bindinput="inputText"></textarea>
-    <button class="submit" bindtap="submit" data-oid="{{oid}}">提交</button>
+    <textarea class="textarea" bindinput="inputText">{{eval}}</textarea>
+    <button class="submit" bindtap="submit" data-oid="{{oid}}" wx:if="{{eval_id === 0}}">提交</button>
 </view> 

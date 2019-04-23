@@ -6,29 +6,29 @@ Page({
         g_img_w : 0,
         g_right : 0,
         classifys : [
-            {id : 0 , name : '店内活动' , s : ''},
-            {id : 1 , name : '为你优选' , s : ' cl-selected'},
-            {id : 2 , name : '单品优惠' , s : ''},
-            {id : 3 , name : '满额促销' , s : ''}
+            // {id : 0 , name : '店内活动' , s : ''},
+            // {id : 1 , name : '为你优选' , s : ' cl-selected'},
+            // {id : 2 , name : '单品优惠' , s : ''},
+            // {id : 3 , name : '满额促销' , s : ''}
         ],
         goods : [
-            {id : 0, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 1, title : '泰国活冻黑虎虾400g', info : '月售98件 好评100%', active : '秒杀7.52折', price : '29.9', pic : '../res/img/class_freezefish.png'},
-            {id : 2, title : '冷冻大连蚬子肉250g', info : '月售8件 好评100%', active : '秒杀8.49折', price : '49.9', pic : '../res/img/class_freezefish.png'},
-            {id : 3, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 4, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 5, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 6, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 7, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 8, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 9, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 10, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 11, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
-            {id : 12, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 0, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 1, title : '泰国活冻黑虎虾400g', info : '月售98件 好评100%', active : '秒杀7.52折', price : '29.9', pic : '../res/img/class_freezefish.png'},
+            // {id : 2, title : '冷冻大连蚬子肉250g', info : '月售8件 好评100%', active : '秒杀8.49折', price : '49.9', pic : '../res/img/class_freezefish.png'},
+            // {id : 3, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 4, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 5, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 6, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 7, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 8, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 9, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 10, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 11, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
+            // {id : 12, title : '美威 智利原味三文鱼排（大西洋鲑）240g/袋', info : '月售3件 好评100%', active : '满30减5', price : '19.8', pic : '../res/img/class_freezefish.png'},
         ]
     },
     onLoad : function (option) {
-        let height = common.getHeight(2.5, this.data.rempx);
+        let height = common.getHeight(0, this.data.rempx);
         let size   = common.winSize();
         console.log((size.width - size.width * 0.72) / 2);
         this.setData({
